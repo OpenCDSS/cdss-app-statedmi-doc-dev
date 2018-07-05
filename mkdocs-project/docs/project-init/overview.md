@@ -1,0 +1,45 @@
+# StateDMI / Initial Project Setup / Overview ##
+
+This documentation describes the project initialization.
+This information is provided in case the software project needs to be
+re-initialized, and to provide rationale for how the project was set up.
+
+* [Development Files Structure](#development-files-structure)
+
+------------------
+
+## Development Files Structure ##
+
+This documentation assumes that files are configured according to the following file structure.
+It is recommended that StateDMI developers follow this file organization closely because if they do not,
+the documentation will be less helpful and troubleshooting will require additional resources.
+Feedback on the structure can be discussed with the development team leads.
+The structure is similar on Linux and Windows, other than the top-level user folders.
+Linux forward-slashes are used to indicate folders in the following.
+
+```text
+/home/user/                                Linux:  Software developer's home folder.
+/cygdrive/C/Users/user/                    Cygwin:  Software developer's home folder.
+C:\Users\user\                             Windows:  Software developer's home folder.
+  cdss-dev/                                CDSS software products.
+    StateDMI/                              CDSS StateDMI software product.
+      eclipse-workspace/                   Eclipse workspace to organize Eclipse projects.
+      git-repos/                           Git repositories that comprise STool.
+        cdss-app-statedmi-doc-dev/         New Markdown/MkDocs developer documentation.
+        cdss-app-statedmi-doc-user/        New Markdown/MkDocs user documentation
+                                           (proposed, legacy documentation is in main repository).
+        cdss-app-statedmi-main/            Main StateDMI application code.
+          .git/                            Git local repository - DO NOT TOUCH DIRECTLY.
+          .gitattributes                   Git repository properties.
+          .github/                         Folder containing issues template, etc., used by GitHub.
+          .gitignore                       Git repository global ignore list.
+          other files                      See details for each repository.
+        cdss-app-statedmi-test/            Functional tests using built-in test features
+                                           (proposed, currently in main repository).
+        cdss-lib-cdss-java/                CDSS code components shared across CDSS applications.
+        cdss-lib-common-java/              Utility code components shared across applications.
+        cdss-lib-dmi-hydrobase-java/       API for Colorado's HydroBase database and SOAP web services.
+        cdss-lib-dmi-hydrobase-rest-java/  API for Colorado's HydroBase REST web services.
+        cdss-lib-models-java/              API for CDSS StateCU and StateMod models.
+        cdss-util-buildtools/              Utility programs to build StateDMI installer.
+```
