@@ -26,7 +26,7 @@ Additional NSIS components were apparently installed on the main software,
 but it is unclear where to retrieve such files that are compatible with NSIS 2.46.
 Therefore, the following repository has been created with NSIS 2.46 files from an older computer used to create StateDMI installers:
 
-* [cdss-archive-nsis-2.46](https://github.com/OpenWaterFoundation/cdss-archive-nsis-2.46)
+* [cdss-archive-nsis-2.46](https://github.com/OpenCDSS/cdss-archive-nsis-2.46)
 
 The following files in particular were copied into the `C:\Program Files (x86)\NSIS` to get the StateDMI install process working
 (clone the above repository and then copy files as needed):

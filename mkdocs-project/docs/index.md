@@ -2,7 +2,8 @@
 
 This developer documentation explains how to build, enhance, and maintain
 [Colorado's Decision Support Systems (CDSS)](http://cdss.state.co.us/Pages/CDSSHome.aspx) StateDMI software.
-StateDMI software automates processing time series and data objects for StateCU and StateMod models.
+StateDMI software automates processing data files for StateCU and StateMod models,
+in particular files that are not handled by TSTool (which focuses on time series).
 See also the [StateDMI User Documentation](http://learn.openwaterfoundation.org/cdss-app-statedmi-doc-user/)
 (**Markdown/MkDocs documentation is not yet available - current documentation is Word/PDF**).
 
@@ -55,29 +56,24 @@ funding provided by the Colorado Water Conservation Board (CWCB)
 in coordination with the Division of Water Resources (DWR),
 as part of Colorado’s Decision Support Systems (CDSS).
 
-Additional enhancements to StateDMI have been funded by various organizations including:
-
-* Any?
-
 StateDMI software developers are encouraged to provide feedback using the
-[GitHub Issues page](https://github.com/OpenWaterFoundation/cdss-app-statedmi-main/issues)
+[GitHub Issues page](https://github.com/OpenCDSS/cdss-app-statedmi-main/issues)
 for the StateDMI main application repository,
 or the issues for the appropriate repositories.
 
 Feedback specific to CDSS functionality (e.g.,
 HydroBase, StateMod, StateModB, StateCU input)
-can be provided using the [CDSS email address](mailto:cdss@state.co.us).
+can also be provided using the [CDSS email address](mailto:DNR_OpenCDSS@state.co.us).
 
 ### Software Components
 
 The following components are used in StateDMI and require or request attribution:
 
 * [Material Theme icons](https://material.io/icons/) - these icons are used in documentation
-* More information will be added here as the open source license is finalized.
 
 ## Colorado's Decision Support Systems ##
 
-Colorado's Decision Support Systems (CDSS, [cdss.state.co.us](http://cdss.state.co.us))
+[Colorado's Decision Support Systems (CDSS)](https://www.colorado.gov/cdss)
 has been developed to answer important questions about Colorado's water resources.
 CDSS efforts are led by the [Colorado Water Conservation Board (CWCB)](http://cwcb.state.co.us)
 and [Colorado Division of Water Resources (DWR)](http://water.state.co.us).
@@ -104,7 +100,7 @@ See the [OpenCDSS Website](http://learn.openwaterfoundation.org/cdss-website-ope
 
 ## About the Open Water Foundation ##
 
-The [Open Water Foundation](http://openwaterfoundation.org) is a 501(c)3 nonprofit social enterprise that focuses
+The [Open Water Foundation](http://openwaterfoundation.org) is a nonprofit social enterprise that focuses
 on developing and supporting open source software for water resources,
 so that organizations can make better decisions about water.
 OWF also works to advance open data tools and implementation.
@@ -112,15 +108,16 @@ OWF staff have been the primary StateDMI developers on State of Colorado and oth
 
 ## License ##
 
-The StateDMI software open source license is being determined in the OpenCDSS project.
-The code repositories will remain private until 
+This StateDMI documentation is licensed using the
+[Creative Commons Attribution International 4.0 (CC BY 4.0) license](https://creativecommons.org/licenses/by/4.0/).
 
-The StateDMI documentation is also being determined but is expected to be a Creative Commons license of some type.
+The StateDMI software is licensed using the GPL 3 license (see the
+[StateDMI software repository](https://github.com/OpenCDSS/cdss-app-statedmi-main).
 
 ## Source Repository on GitHub ##
 
 The source files for this documentation are maintained in a GitHub repository:
-[cdss-app-statedmi-doc-dev](https://github.com/OpenWaterFoundation/cdss-app-statedmi-doc-dev).
+[cdss-app-statedmi-doc-dev](https://github.com/OpenCDSS/cdss-app-statedmi-doc-dev).
 
 This developer documentation is currently maintained in a repository that is separate from StateDMI code
 in order to avoid confusion with the legacy documentation and to facilitate updates.

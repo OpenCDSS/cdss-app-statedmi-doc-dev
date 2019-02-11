@@ -17,7 +17,7 @@ Java 9 will be evaluated and will be phased in as soon as possible,
 but requires confirmation that deployed systems including Linux variants support Java 9.
 
 It should be possible to change the run-time Java for deployed StateDMI software by using
-[`launch4j`](launch4j) configuration settings.
+[`launch4j`](launch4j.md) configuration settings.
 
 ## Download Java 8 ##
 
@@ -88,4 +88,4 @@ mklink /d jre_18 jre8
 The order that Java and Eclipse are installed may vary.
 These major development environment components need to be configured appropriately and it is useful to use a run script to start Eclipse.
 
-* [See information about the run script](eclipse#check-eclipse-run-scipt)
+* [See information about the run script](eclipse.md#check-eclipse-run-scipt)
