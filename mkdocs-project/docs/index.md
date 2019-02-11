@@ -5,7 +5,6 @@ This developer documentation explains how to build, enhance, and maintain
 StateDMI software automates processing data files for StateCU and StateMod models,
 in particular files that are not handled by TSTool (which focuses on time series).
 See also the [StateDMI User Documentation](http://learn.openwaterfoundation.org/cdss-app-statedmi-doc-user/)
-(**Markdown/MkDocs documentation is not yet available - current documentation is Word/PDF**).
 
 * [How to Use this Documentation](#how-to-use-this-documentation)
 * [Acknowledgements](#acknowledgements)
