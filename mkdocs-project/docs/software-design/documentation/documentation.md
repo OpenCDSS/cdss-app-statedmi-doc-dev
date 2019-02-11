@@ -1,7 +1,5 @@
 # Documentation #
 
-**This documentation needs to be cleaned up - it is not totally accurate.**
-
 StateDMI software has significant developer and user documentation.
 
 * [Markdown/MkDocs Documentation](#markdownmkdocs-documentation)
@@ -14,8 +12,8 @@ StateDMI software has significant developer and user documentation.
 StateDMI developer documentation was written in Markdown/MkDocs.
 User documentation currently exists in Word/PDF but it is recommended to migrate to Markdown/MkDocs and use the following repository:
 
-* [User Documentation](https://github.com/OpenWaterFoundation/cdss-app-statedmi-doc-user)
-* [Developer Documentation](https://github.com/OpenWaterFoundation/cdss-app-statedmi-doc-dev)
+* [User Documentation](https://github.com/OpenCDSS/cdss-app-statedmi-doc-user)
+* [Developer Documentation](https://github.com/OpenCDSS/cdss-app-statedmi-doc-dev)
 
 The Markdown/MkDocs documentation is now the standard documentation and the legacy documentation discussed
 in the next section is being phased out.  MkDocs creates a static HTML website from Markdown,
@@ -41,7 +39,7 @@ The following design issues still need to be resolved:
 Legacy user documentation was created in Word format and manually saved to PDF from Word,
 saved in the following repository:
 
-* [cdss-app-statedmi-main/doc](https://github.com/OpenWaterFoundation/cdss-app-statedmi-main/tree/master/doc)
+* [cdss-app-statedmi-main/doc](https://github.com/OpenCDSS/cdss-app-statedmi-main/tree/master/doc)
 
 Each file uses header and other styles that allow a table of contents to be created.
 However, automating conversion of Word to PDF is not straightforward

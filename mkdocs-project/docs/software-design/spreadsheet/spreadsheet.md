@@ -1,8 +1,7 @@
 # Spreadsheet #
 
 **This documentation needs to updated.  It is a copy from TSTool.
-StateDMI does not currently handle reading/writing Excel spreadsheets.
-However, it could be enhanced to do so, similar to TSTool, when it makes sense.**
+StateDMI support for Excel spreadsheets has recently been added by copying TSTool code.**
 
 * [Introduction](#introduction)
 * [Spreadsheet Code Design](#sreadsheet-code-design)

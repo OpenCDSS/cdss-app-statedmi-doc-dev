@@ -4,8 +4,16 @@ This repository contains the developer documentation for
 [Colorado's Decision Support Systems (CDSS)](http://cdss.state.co.us/Pages/CDSSHome.aspx) StateDMI software.
 
 See the deployed [CDSS / StateDMI (Developer)](http://learn.openwaterfoundation.org/cdss-app-statedmi-doc-dev/) documentation.
-This documentation is currently hosted on Open Water Foundation website but is expected to
-be integrated into the CDSS website.
+This documentation is currently hosted on Open Water Foundation website while OpenCDSS
+server is configured.  See the following online resources:
+
+* [Colorado's Decision Support System (CDSS)](http://cdss.state.co.us)
+* [OpenCDSS](http://learn.openwaterfoundation.org/cdss-website-opencdss/) - currently hosted
+on the Open Water Foundation website while an OpenCDSS server is being configured
+* [StateDMI software main repository](https://github.com/OpenCDSS/cdss-app-statedmi-main)
+* [StateDMI User Documentation](http://learn.openwaterfoundation.org/cdss-app-statedmi-doc-user/) - currently hosted on the Open Water Foundattion website while an OpenCDSS server is being configured
+
+See the following sections in this page:
 
 * [StateDMI Software Overview](#statedmi-software-overview)
 * [Repository Contents](#repository-contents)
@@ -22,20 +30,22 @@ be integrated into the CDSS website.
 
 ## StateDMI Software Overview ##
 
-The StateDMI software is a Java application that automates time series processing:
+The StateDMI software is a Java application that automates data processing,
+primarily for CDSS StateCU and StateMod models:
 
 1. Command-based workflow language.
 2. General commands including file manipulation
 and support for processor properties to allow dynamic scripting.
 3. Data processing commands for:
-	1. Reading time series from files, databases, and web services
+	1. Reading data from files, databases, and web services
 	2. Creating data objects associated with CDSS StateCU and StateMod models
 	3. Setting data
 	4. Filling data
 	5. Manipulating data (aggregating, translating into modeling concepts, etc.)
 	6. Writing data to files for StateCU and StateMod models
 	7. Checking data
-4. Built-in test framework, which is used to run functional tests, suitable for software developers and also
+4. Built-in testing framework, which is used to run functional tests,
+suitable for software developers and also
 non-programmers who want to validate processing workflows.
 5. Multiple run modes including batch and user interface.
 
@@ -48,6 +58,7 @@ The repository contains the following:
 .gitattributes        Typical Git configuration file for repository attributes.
 .gitignore            Typical Git configuration file for ignored file list.
 README.md             This file.
+LICENSE.md            License file.
 build-util/           Useful scripts to view, build, and deploy documentation.
 mkdocs-project/       Typical MkDocs project for this documentation.
   mkdocs.yml          MkDocs configuration file for website.
@@ -83,20 +94,17 @@ C:\Users\user\                            Windows:  User's files.
 
 The development environment for contributing to this documentation requires
 installation of Python, MkDocs, and Material MkDocs theme.
-Python 2 has been used for development.
+Python 3 and MkDocs 1+ has been used for development.
 See the [OWF / Learn MkDocs](http://learn.openwaterfoundation.org/owf-learn-mkdocs/)
 documentation for information about installing these tools.
-
-Python 3 with MkDocs and Material theme can also be used,
-given that the source documentation files are the same.
 
 ## Editing and Viewing Content ##
 
 If the development environment is properly configured, edit and view content as follows:
 
 1. Edit content in the `mkdocs-project/docs` folder and update `mkdocs-project/mkdocs.yml` as appropriate.
-2. Run the `build-util/run-mkdocs-serve-8000.sh` script (Cygwin/Linux) or equivalent.
-3. View content in a web browser using URL `http://localhost:8000`.
+2. Run the `build-util/run-mkdocs-serve-8001.sh` script (Cygwin/Linux) or equivalent.
+3. View content in a web browser using URL `http://localhost:8001`.
 
 ## Style Guide ##
 
@@ -111,13 +119,14 @@ with the goal of keeping formatting simple in favor of focusing on useful conten
 * Use ***bold italics*** when referencing UI components such as menus.
 * Use slashes to indicate ***Menu / SubMenu***.
 * Images are handled as follows:
-	+ Where narrative content pages are sufficiently separated into folders,
-	image files exist in those folder with names that match the original StateMod Word documentation.
-	This approach has been used for the most part.
-	+ If necessary, place images in a folder with the same name as the content file and include
-	`-images` at the end of the folder name at the same level (for example `x.md` and `x-images/`)
-	or include an `images` folder under the content folder.
-	+ When using images in the documents, consider providing a link to look at the full-sized
+  + Where narrative content pages are sufficiently separated into folders,
+  image files exist in those folder with names that match the original TSTool Word documentation.
+  This approach has been used for the most part.
+  + If necessary, place images in a folder with the same name as the content file and include
+  `-images` at the end of the folder name at the same level
+  (for example `x.md` and `x-images/`)
+  or include an `images` folder under the content folder.
+  + When using images in the documents, consider providing a link to look at the full-sized
 	image, as follows (normal MkDocs approach does not seem to work?):
 
 ```text
@@ -133,9 +142,8 @@ Use a simple list with links to sections on the page.
 
 ## License ##
 
-This documentation is currently licensed under the
-[Creative Commons Attribution 2.0 Generic License](https://creativecommons.org/licenses/by/2.0/),
-which is the recommendation for CDSS documentation that is currently under review.
+The license for this documentation is the
+[Creative Commons Attribution International 4.0 (CC BY 4.0) license](https://creativecommons.org/licenses/by/4.0/).  See the [LICENSE.md](LICENSE.md) file.
 
 ## Contributing ##
 
@@ -150,13 +158,10 @@ Fill out the template issue.
 
 This repository is maintained by the OpenCDSS team.
 
-## Contributors ##
-
-* Steve Malers, Open Water Foundation (@smalers)
-
 ## Release Notes ##
 
-The following release notes indicate the update history for documentation, with GitHub repository issue indicated,
-if applicable (links to issues via README.md are not cleanly supported by GitHub so use the repository issues page to find).
+The following release notes indicate the update major history for documentation.
+See the GitHub issues and repository history for detailed information.
 
+* 2019-01-09 - Update for publid release of OpenCDSS.
 * 2018-07-03 - Initial content patterned after TSTool developer documentation.

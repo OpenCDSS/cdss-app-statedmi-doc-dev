@@ -8,7 +8,7 @@ It is generally best to open a command shell and then run the script so that any
 The script ensures that proper environment and Eclipse version is used for the current developer.
 
 ```
-C:\Users\user\cdss-dev\StateDMI\git-repos\cdss-app-statedmi-main\build-util\run-eclipse-neon3-32bit.bat`
+C:\Users\user\cdss-dev\StateDMI\git-repos\cdss-app-statedmi-main\build-util\run-eclipse-win32.bat`
 ```
 
-See the [run scripts on GitHub](https://github.com/OpenWaterFoundation/cdss-app-statedmi-main/tree/master/build-util).
+See the [run scripts on GitHub](https://github.com/OpenCDSS/cdss-app-statedmi-main/tree/master/build-util).

@@ -3,8 +3,8 @@
 This documentation is for software developers that are members of the core StateDMI team and others who
 have an interest in contributing to the StateDMI software project.
 It is recommended that the StateDMI development environment should follow these setup instructions, which are
-consistent with the [Development Environment](../dev-env/overview/) and [Initial Project Setup](../project-init/overview/) documentation.
-The [standard development folder structure](../project-init/overview#development-files-structure)
+consistent with the [Development Environment](../dev-env/overview.md) and [Initial Project Setup](../project-init/overview.md) documentation.
+The [standard development folder structure](../project-init/overview.md#development-files-structure)
 should be followed to minimize potential for issues,
 especially given the number of components and setup steps.
 All of this documentation is consistent with the recommended development environment.
@@ -19,26 +19,26 @@ specific instructions are included below (rather than immediately linking to oth
 After reading instructions for a step, use "back" to return to this outline so that setup instructions can be followed in the proper sequence.
 **Bold comments** indicate which steps are required and which are optional.
 
-1. **Required:** [Machine for Development](../dev-env/machine) - need a suitable computer
+1. **Required:** [Machine for Development](../dev-env/machine.md) - need a suitable computer
 2. **Required:** [Create folder for development files](#create-folder-for-development-files) - where development will occur (**see details below**)
 3. **Required (if not already installed):** Development Environment software install part 1 (version control)
-	* [Development Environment / Git](../dev-env/git/) - install Git software so the repositories can be cloned
+	* [Development Environment / Git](../dev-env/git.md) - install Git software so the repositories can be cloned
 4. **Required:** [Clone Git Repositories](#clone-git-repositories) - clone the repositories to get access to all files (**see details below**)
 5. **Required:** Development Environment software install part 2 (Java development tools)
-	* **Required:** [Development Environment / Java 8](../dev-env/java8/) - make sure Java 8 is available on system
-	* **Required (if not already installed):** [Development Environment / Eclipse](../dev-env/eclipse/) - install Eclipse for use as IDE
-	* **Optional:** [Development Environment / KDiff3](../dev-env/kdiff3/) - install software to facilitate comparing files
+	* **Required:** [Development Environment / Java 8](../dev-env/java8.md) - make sure Java 8 is available on system
+	* **Required (if not already installed):** [Development Environment / Eclipse](../dev-env/eclipse.md) - install Eclipse for use as IDE
+	* **Optional:** [Development Environment / KDiff3](../dev-env/kdiff3.md) - install software to facilitate comparing files
 	**(highly useful and can be used with Git)**
-	* **Optional:** [Development Environment / NSIS](../dev-env/nsis/) - install software to create StateDMI software installer
-	* **Optional:** [Development Environment / launch4j](../dev-env/launch4j/) - install software to create StateDMI software installer
+	* **Optional:** [Development Environment / NSIS](../dev-env/nsis.md) - install software to create StateDMI software installer
+	* **Optional:** [Development Environment / launch4j](../dev-env/launch4j.md) - install software to create StateDMI software installer
 6. **Required:** Eclipse Workspace Setup (interactive development environment)
 	* **Required:** [Create Eclipse Workspace Folder](#create-eclipse-workspace-folder) - simple manual step (***see details below***)
 	* **Required:** [Import the Existing Eclipse StateDMI Projects from the Git Repository Folders](#import-the-existing-eclipse-statedmi-projects-from-the-git-repository-folders) -  import
 	from Git repository working files (**see details below**)
 7. **Optional:** Development Environment software install part 3 (documentation tools), **(install if will view and edit documentation within the development environment)**
-	* [Development Environment / Python and pip](../dev-env/python/) - install Python, which is needed by MkDocs
-	* [Development Environment / MkDocs](../dev-env/mkdocs/) - install MkDocs to view/edit full documentation locally.
-	See [Development Tasks / Documenting](../dev-tasks/overview#documenting)
+	* [Development Environment / Python and pip](../dev-env/python.md) - install Python, which is needed by MkDocs
+	* [Development Environment / MkDocs](../dev-env/mkdocs.md) - install MkDocs to view/edit full documentation locally.
+	See [Development Tasks / Documenting](../dev-tasks/overview.md#documenting)
 	for instructions on viewing documentation.
 8. [Next Steps - Development Tasks](#next-steps-development-tasks) - be productive!
 
@@ -48,7 +48,7 @@ The following sections are referenced from the above outline.
 
 ## Create Folder for Development Files ##
 
-Create a development home folder consistent with the [initial project setup](../project-init/overview) - this
+Create a development home folder consistent with the [initial project setup](../project-init/overview.md) - this
 is an umbrella folder for all StateDMI development files,
 including software tools that are installed locally (as appropriate).
 It is assumed that development will occur within a developer's home folder on the computer in order to provide separation from the
@@ -59,7 +59,7 @@ After the folder is created, additional instructions describe how to install dev
 
 ### ![Cygwin](../images/cygwin-32.png) Cygwin ###
 
-[Cygwin](../resources#cygin) is a useful software platform to provide Linux programs on a Windows computer.
+[Cygwin](../resources.md#cygin) is a useful software platform to provide Linux programs on a Windows computer.
 It may be convenient to use Cygwin for some work, such as running command-line utilities.
 Do the following using a terminal window. Note that the syntax `~` indicates the home folder for Bash shell
 and is equivalent to the `$HOME` environment variable location.
@@ -98,11 +98,11 @@ Do the following in a Windows command shell, Git CMD, or perform the equivalent 
 > mkdir StateDMI
 ```
 
-*Press back in the browser to return to the outline.*
+*Press* ***back*** *in the browser to return to the outline.*
 
 ## Clone Git Repositories ##
 
-The GitHub repositories described in the [standard development folder structure](../project-init/overview#development-files-structure)
+The GitHub repositories described in the [standard development folder structure](../project-init/overview.md#development-files-structure)
 contain various components needed for StateDMI development.
 Each repository will be cloned into a local folder.
 
@@ -141,14 +141,14 @@ Use a Windows git client such as Git Bash:
 $ git clone https://github.com/OpenWaterFoundation/cdss-app-statedmi-doc-user.git
 $ git clone https://github.com/OpenWaterFoundation/cdss-app-statedmi-test.git
 ```
-The resulting files should match the [Development Files Structure](../project-init/overview#development-files-structure).
+The resulting files should match the [Development Files Structure](../project-init/overview.md#development-files-structure).
 
-*Press back in the browser to return to the outline.*
+*Press* ***back*** *in the browser to return to the outline.*
 
 ## Create Eclipse Workspace Folder ##
 
 This step creates the `eclipse-workspace` workspace folder where Eclipse saves its files to manage the StateDMI software, 
-as discussed in the [Development Files Structure](../project-init/overview#development-files-structure).
+as discussed in the [Development Files Structure](../project-init/overview.md#development-files-structure).
 
 The recommended Eclipse workspace folder for different environments is as follows:
 
@@ -156,7 +156,7 @@ The recommended Eclipse workspace folder for different environments is as follow
 * ![Linux](../images/linux-32.png) Linux:  the workspace folder is `~/cdss-dev/StateDMI/eclipse-workspace`
 * ![Windows](../images/windows-32.png) Windows: the workspace folder is `C:\Users\user\cdss-dev\StateDMI\eclipse-workspace`
 
-Start Eclipse by running the [Eclipse run script](../project-init/eclipse-run-script) as shown below.
+Start Eclipse by running the [Eclipse run script](../project-init/eclipse-run-script.md) as shown below.
 This script can be used any time to run Eclipse for this project.
 
 Open the workspace in Eclipse in preparation of adding the code project from the Git repository in the next step.
@@ -176,7 +176,7 @@ If the `eclipse-workspace` folder was not created previously, it can be created 
 
 The Eclipse workspace folder is identified by a `.metadata` folder, which will be hidden on Linux.
 
-*Press back in the browser to return to the outline.*
+*Press* ***back*** *in the browser to return to the outline.*
 
 ## Import the Existing Eclipse StateDMI Projects from the Git Repository Folders ##
 
@@ -258,11 +258,13 @@ The first item above should have been imported as per the previous section, beca
 However, the other two are new repositories that have not been saved as Eclipse projects.
 It is OK to not import the last two repositories into Eclipse.
 
+*Press* ***back*** *in the browser to return to the outline.*
+
 ## Next Steps - Development Tasks ##
 
-At this point it should be possible to [compile](../dev-tasks/overview#compiling) and
+At this point it should be possible to [compile](../dev-tasks/overview.md#compiling) and
 [run](../dev-tasks/overview#running) StateDMI within the Eclipse interface].  See also:
 
-* [Deployed Environment / Overview](../deployed-env/overview/) - for an overview of the deployed software
-* [Software Design / Overview](../software-design/overview/) - to understand software structure and logic
-* [Development Tasks / Overview](../dev-tasks/overview/) - common development tasks
+* [Deployed Environment / Overview](../deployed-env/overview.md) - for an overview of the deployed software
+* [Software Design / Overview](../software-design/overview.md) - to understand software structure and logic
+* [Development Tasks / Overview](../dev-tasks/overview.md) - common development tasks

@@ -1,9 +1,6 @@
 # Tables #
 
-**Tables are not currently supported in StateDMI but may be added in the future.
-Currently, commands are available with names like `ReadABCFromList` to read delimited files.
-An alternative approach would be to read a table and then `ReadABCFromTable`.
-This documentation is a copy from TSTool and is included for discussion purposes.**
+**This content needs to be reviewed.  Tables have recently been enabled by copying TSTool code.**
 
 * [Introduction](#introduction)
 * [Table Design](#table-design)

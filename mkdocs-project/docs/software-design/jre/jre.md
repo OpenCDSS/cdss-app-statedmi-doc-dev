@@ -22,7 +22,7 @@ packaged into Java Archive (`*.jar`) files for distribution and use at run-time.
 
 ## Java Runtime Environment ##
 
-A [Java Runtime Environment (JRE)](../../resources#java) that is the same or newer than the Java version used in the development environment
+A [Java Runtime Environment (JRE)](../../resources.md#java) that is the same or newer than the Java version used in the development environment
 is required to run StateDMI in the operational environment.
 For example, StateDMI developed and distributed with Java 8 cannot be run using JRE 7.
 Although it is possible to rely on a Java version on the computer, StateDMI software
@@ -34,7 +34,7 @@ The JRE allows Java to be run in a protected virtual environment separate from o
 ## Java Launcher ##
 
 The JRE is runs StateDMI via a StateDMI launcher program.
-On Windows, the open source [Launch4J](../../resources#launch4j)
+On Windows, the open source [Launch4J](../../resources.md#launch4j)
 software is used to run StateDMI.
 
 ## 32-bit and 64-bit Versions ##
