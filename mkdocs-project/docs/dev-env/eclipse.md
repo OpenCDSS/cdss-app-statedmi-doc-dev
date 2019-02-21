@@ -1,4 +1,4 @@
-# TSTool / Development Environment / Eclipse ##
+# StateDMI / Development Environment / Eclipse ##
 
 * [Introduction](#introduction)
 * [Download Eclipse Neon](#download-eclipse-neon)
@@ -9,19 +9,19 @@
 
 ## Introduction ##
 
-The Eclipse Integrated Development Environment (IDE) has traditionally been used for TSTool software development and is recommended.
+The Eclipse Integrated Development Environment (IDE) has traditionally been used for StateDMI software development and is recommended.
 Alternate IDEs may be supported at some point; however, investigating impacts of using other IDEs
-on TSTool development will require resources.
+on StateDMI development will require resources.
 Eclipse does have some issues and limitations, but other IDEs have different issues.
 
-TSTool development has typically occurred on Windows computers, although the software is often deployed to other operating systems.
+StateDMI development has typically occurred on Windows computers, although the software can be deployed to other operating systems.
 
-As discussed in the [Java 8](java8) section, Java 8 is currently used for development and 32-bit Java is used due to component requirements.
-Therefore, to avoid confusion with compatibility, Eclipse 32-bit is also used.
-TSTool has been developed with Eclipse Neon.  A later version of Eclipse will be phased in as other updates occur.
+As discussed in the [Java 8](java8) section, Java 8 is currently used for development and 32-bit Java is used,
+to be consistent with TSTool development environment.
+StateDMI has been developed with Eclipse Neon.  A later version of Eclipse will be phased in as other updates occur.
 The minor Eclipse version is not generally an issue so the latest version should be used.
 
-The Eclipse `.project` file is currently saved in the Git repository for each TSTool component repository
+The Eclipse `.project` file is currently saved in the Git repository for each StateDMI component repository
 in order to facilitate development environment setup.  This may change in the future.
 Using a compatible version of Eclipse between developers ensures that the format of such files is consistent.
 
@@ -53,7 +53,7 @@ This is a bit redundant withe the extra `eclipse` folder but clearly indicates t
 
 ## Check Eclipse Run Script ##
 
-The `cdss-app-tstool-main` repository `build-util` folder contains scripts to run the correct version of Eclipse,
-assuming a standard installation folder.  For example, `run-eclipse-neon3-win32.bat` can be run from a Windows command shell.
-This ensures that the proper version of Eclipse and configuration is used.
+The `cdss-app-statedmi-main` repository `build-util` folder contains scripts to run the correct version of Eclipse,
+assuming a standard installation folder.  For example, `run-eclipse-win32.bat` can be run from a Windows command shell.
+This ensures that the proper version of Eclipse and configuration are used.
 If necessary, this script can be modified or other versions added over time (for example for new versions of Eclipse).

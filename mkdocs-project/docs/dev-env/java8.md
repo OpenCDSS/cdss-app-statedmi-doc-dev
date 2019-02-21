@@ -11,13 +11,10 @@
 ## Introduction ##
 
 Java 8 is currently used for StateDMI development, consistent with TSTool.
-However, because StateDMI does not currently use any native 32-bit third-party libraries (like TSTool),
+StateDMI does not currently use any native 32-bit third-party libraries (like TSTool); therefore,
 there is not a restriction to update to 64-bit Java.
-Java 9 will be evaluated and will be phased in as soon as possible,
+Java 64-bit version 9+ will be evaluated and will be phased in as soon as possible,
 but requires confirmation that deployed systems including Linux variants support Java 9.
-
-It should be possible to change the run-time Java for deployed StateDMI software by using
-[`launch4j`](launch4j.md) configuration settings.
 
 ## Download Java 8 ##
 
