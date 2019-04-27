@@ -20,7 +20,7 @@ It is expected that developers are proficient with Git and will configure and us
 * Cygwin git command line (**only use for repositories that are cloned with Cygwin Git**)
 * Other Git client
 
-See also [CDSS / Learn Git](http://learn.openwaterfoundation.org/cdss-learn-git/03-lesson-install/overview/).
+See also [CDSS / Learn Git](http://opencdss.state.co.us/cdss-learn-git/03-lesson-install/overview/).
 
 ## Git Issues to be Aware of ##
 
