@@ -2,7 +2,7 @@
 
 StateDMI version control uses Git and GitHub and is consistent with CDSS protocols.
 
-* See the [CDSS / Learn Git](http://learn.openwaterfoundation.org/cdss-learn-git/) documentation.
+* See the [CDSS / Learn Git](http://opencdss.state.co.us/cdss-learn-git/) documentation.
 
 Major considerations are:
 

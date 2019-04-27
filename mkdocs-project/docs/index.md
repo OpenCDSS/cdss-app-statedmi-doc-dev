@@ -4,7 +4,7 @@ This developer documentation explains how to build, enhance, and maintain
 [Colorado's Decision Support Systems (CDSS)](http://cdss.state.co.us/Pages/CDSSHome.aspx) StateDMI software.
 StateDMI software automates processing data files for StateCU and StateMod models,
 in particular files that are not handled by TSTool (which focuses on time series).
-See also the [StateDMI User Documentation](http://learn.openwaterfoundation.org/cdss-app-statedmi-doc-user/)
+See also the [StateDMI User Documentation](http://opencdss.state.co.us/statedmi/latest/doc-dev/)
 
 * [How to Use this Documentation](#how-to-use-this-documentation)
 * [Acknowledgements](#acknowledgements)
@@ -95,7 +95,7 @@ In late 2016, the Open Water Foundation began the effort to move StateDMI and ot
 and establish open source software projects, referred to as "OpenCDSS".
 The OpenCDSS project is resulting in a significant evolution in how CDSS software development occurs,
 such as implementing version control with Git/GitHub and modernizing the development environment and documentation.
-See the [OpenCDSS Website](http://learn.openwaterfoundation.org/cdss-website-opencdss/) for more information.
+See the [OpenCDSS Website](http://opencdss.state.co.us/opencdss/) for more information.
 
 ## About the Open Water Foundation ##
 
@@ -123,5 +123,5 @@ in order to avoid confusion with the legacy documentation and to facilitate upda
 
 ## Release Notes ##
 
-See the [StateDMI release notes](http://learn.openwaterfoundation.org/cdss-app-statedmi-doc-user/appendix-release-notes/release-notes)
+See the [StateDMI release notes](http://opencdss.state.co.us/statedmi/latest/doc-dev/appendix-release-notes/release-notes)
 section of the StateDMI user documentation for information about StateDMI software changes.
