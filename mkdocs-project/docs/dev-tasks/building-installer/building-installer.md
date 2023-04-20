@@ -27,7 +27,7 @@ This documentation describes how to create and package the StateDMI installer.
 
 The StateDMI installer depends on the target operating system:
 
-* ![Windows](../../images/windows-32.png) Windows - self-extracting installer (e.g., `StateDMI_CDSS_04.05.00beta_Setup.exe`.
+* ![Windows logo](../../images/windows-32.png) Windows - self-extracting installer (e.g., `StateDMI_CDSS_04.05.00beta_Setup.exe`.
 
 The Windows installer uses the following technologies to create the installer.
 Note that Eclipse Ant is used and not Maven.
@@ -83,14 +83,14 @@ installation folder, to determine what needs to be changed.
 
 The Eclipse IDE provides a way to run external tools such as command line software:
 
-![eclipse-external-tools1](images/eclipse-external-tools1.png)
+![eclipse external menu view](images/eclipse-external-tools1.png)
 
 Available run configurations are saved in the repository in `scripts` folder.
 The following shows the list of external tool configurations that have been defined for StateDMI.
 Many of these can be phased out as software development focuses on the OpenCDSS configuration of StateDMI.
 The specific run configurations of interest are described in the [Build Steps](#build-steps) sections.
 
-![eclipse-external-tools2.png](images/eclipse-external-tools2.png)
+![eclipse external configuration window](images/eclipse-external-tools2.png)
 
 ### Java Runtime Environment ###
 
@@ -182,7 +182,7 @@ To run this step, execute the external run configuration as shown in the followi
 
 The following image shows the ***External Tools Configurations...*** selection that should be used.
 
-![eclipse-external-tools-create-1](images/eclipse-external-tools-create-1.png)
+![eclipse external tools selection example](images/eclipse-external-tools-create-1.png)
 
 Note the selection for the JRE that is used, which can be the same as the workspace Java, although any Java 8 should work.
 
@@ -204,7 +204,7 @@ If the previous step was successful, then the ***External Tools Configurations**
 This step will package the files in the `dist` folder into the installer using NSIS software.
 The resulting files will be as shown below:
 
-![eclipse-external-tools-create-dist](images/eclipse-external-tools-create-dist.png)
+![Windows Explorer window showing file path git-repos/cdss-app-tstool-main/dist](images/eclipse-external-tools-create-dist.png)
 
 * `install-cdss` - contains an image of all the files in the distribution before packaging
 * `cdss-app-statedmi-main_18.jar` - the Jar file for the main StateDMI application corresponding to the repository
@@ -219,7 +219,7 @@ The version number for the installer file will match the version in the `product
 The setup executable created in the previous step can be run to install the software on the Windows computer,
 which will show dialogs similar to the following:
 
-![installer1](images/installer1.png)
+![installer setup GUI](images/installer1.png)
 
 All of the defaults should be accepted.
 
