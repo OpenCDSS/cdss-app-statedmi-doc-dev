@@ -46,6 +46,7 @@ nav:
   - 'Date/time Handling': software-design/datetime/datetime.md
   - 'Time Series': software-design/ts/ts.md
   - 'Datastores': software-design/datastores/datastores.md
+  - 'Plugin Datastores': software-design/plugin-datastores/plugin-datastores.md
   - 'Tables': software-design/tables/tables.md
   - 'Data Products': software-design/data-products/data-products.md
   - 'Spreadsheet': software-design/spreadsheet/spreadsheet.md
@@ -60,7 +61,7 @@ nav:
   - 'Git': dev-env/git.md
   - 'Python and pip': dev-env/python.md
   - 'MkDocs': dev-env/mkdocs.md
-  - 'Java 8': dev-env/java8.md
+  - 'Java': dev-env/java.md
   - 'Eclipse': dev-env/eclipse.md
 #  - 'Text Editor': dev-env/editor.md
   - 'KDiff3': dev-env/kdiff3.md
@@ -93,9 +94,10 @@ extra_css:
 # ------------------------------------------------
 # Google Analytics
 # - see:  https://squidfunk.github.io/mkdocs-material/getting-started/#google-analytics
-google_analytics:
- - 'UA-43023264-1'
- - auto
+extra:
+  analytics:
+    provider: google
+    property: 'G-PTJLXFDPDL'
 # ------------------------------------------------
 markdown_extensions:
   - footnotes

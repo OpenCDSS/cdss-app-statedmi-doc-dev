@@ -1,31 +1,31 @@
 # Command Processor #
 
-* [Introduction](#introduction)
-* [Processor Properties](#processor-properties)
-* [Processor Data](#processor-data)
-* [Communicating with Processor](#communicating-with-processor)
+*   [Introduction](#introduction)
+*   [Processor Properties](#processor-properties)
+*   [Processor Data](#processor-data)
+*   [Communicating with the Processor](#communicating-with-the-processor)
 
 -------------
 
 ## Introduction ##
 
-The [StateDMI_Processor](https://github.com/OpenWaterFoundation/cdss-app-statedmi-main/blob/master/src/DWR/DMI/StateDMI/StateDMI_Processor.java)
+The [`StateDMI_Processor`](https://github.com/OpenCDSS/cdss-app-statedmi-main/blob/master/src/DWR/DMI/StateDMI/StateDMI_Processor.java)
 class (generically referred to as "command processor" or "processor")
 is the core class that handles processing commands shown in the StateDMI UI and
 when processing command files in batch mode.
 
 ## Processor Properties ##
 
-**This section needs to be update - it was copied from TSTool.**
+**This section needs to be updated - it was copied from TSTool.**
 
 Properties are maintained in the processor to control processing.
 Properties fall into two categories:
 
-* "built-in properties" have meaning to the core processor/engine and are defined with built-in data members.
-For example, the global output period start and end.
-Built-in properties are generally objects, not primitives, in order to better handle missing/null.
-* "user-defined properties" provide flexibility for controlling workflows via `${Property}` notation.
-User-defined properties are first-class objects, not primitives:
+*   "built-in properties" have meaning to the core processor/engine and are defined with built-in data members.
+    For example, the global output period start and end.
+    Built-in properties are generally objects, not primitives, in order to better handle missing/null.
+*   "user-defined properties" provide flexibility for controlling workflows via `${Property}` notation.
+    User-defined properties are first-class objects, not primitives:
 
 ```
 /**
@@ -41,18 +41,18 @@ and performs the appropriate action.
 
 The following are complexities with properties:
 
-* **How to handle missing/null** - properties that are not defined will have a value of null if requested.
-Missing values are generally treated similarly.
-String values should distinctly handle differences between null/missing and spaces.
-Calling code must handle the difference between missing/null and empty strings.
-* **How to handle case-specificity** - StateDMI code is generally forgiving related to case-specificity
-but does try to enforce standards.
-The default is to use property names that are `MixedCase`.
-However, to minimize issues with case, much of the code compares strings by ignoring case.
-This protocol was implemented early on due to Microsoft operating systems generally not enforcing case.
-This approach can be problematic with properties because internally the HashMap is case-specific.
-The general trend in StateDMI is to move towards case-specificity for properties,
-although the code works well now so major changes are not envisioned.
+*   **How to handle missing/null** - properties that are not defined will have a value of null if requested.
+    Missing values are generally treated similarly.
+    String values should distinctly handle differences between null/missing and spaces.
+    Calling code must handle the difference between missing/null and empty strings.
+*   **How to handle case-specificity** - StateDMI code is generally forgiving related to case-specificity
+    but does try to enforce standards.
+    The default is to use property names that are `MixedCase`.
+    However, to minimize issues with case, much of the code compares strings by ignoring case.
+    This protocol was implemented early on due to Microsoft operating systems generally not enforcing case.
+    This approach can be problematic with properties because internally the HashMap is case-specific.
+    The general trend in StateDMI is to move towards case-specificity for properties,
+    although the code works well now so major changes are not envisioned.
 
 ## Processor Data ##
 
@@ -78,7 +78,7 @@ The general design approach is to add lists of major data objects as the process
 and use properties for configuration and processing control.
 With this approach, the core processor can be kept conceptually simple.
 
-## Communicating with Processor ##
+## Communicating with the Processor ##
 
 The processor performs many tasks, which requires corresponding internal methods.
 Commands have a reference to the processor that is used to process the command.

@@ -1,13 +1,13 @@
 # Command #
 
-* [Introduction](#introduction)
-* [Command Interface](#command-interface) - basic behavior requirements
-* [AbstractCommand Class](#abstractcommand-class) - default implementation of `CommandInterface`
-* [Specific Command Class](#specific-command-class)
-* [CommandStatusProvider Interface](#commandstatusprovider-interface) - for command log/status access
-* [CommandDiscovable Interface](#commanddiscoverable-interface) - to run in discovery (pre-run) mode
-* [FileGenerator Interface](#file-generator-interface) - for commands that create output files
-* [CommandProcessorEventProvider Interface](#commandprocessoreventprovider-interface) - to allow processor to listen for command events
+*   [Introduction](#introduction)
+*   [Command Interface](#command-interface) - basic behavior requirements
+*   [AbstractCommand Class](#abstractcommand-class) - default implementation of `CommandInterface`
+*   [Specific Command Class](#specific-command-class)
+*   [CommandStatusProvider Interface](#commandstatusprovider-interface) - for command log/status access
+*   [CommandDiscovable Interface](#commanddiscoverable-interface) - to run in discovery (pre-run) mode
+*   [FileGenerator Interface](#file-generator-interface) - for commands that create output files
+*   [CommandProcessorEventProvider Interface](#commandprocessoreventprovider-interface) - to allow processor to listen for command events
 
 ----
 
@@ -19,19 +19,19 @@ The [StateDMI_Processor](https://github.com/OpenCDSS/cdss-app-statedmi-main/blob
 manages a list of commands, which allows the commands to be interacted with in the UI and run in batch mode.
 The processor performs tasks that are general but does not perform analysis.
 
-Command instances are created using the [StateDMICommandFactory Class](../command-factory/command-factory) (see separate discussion).
+Command instances are created using the [StateDMICommandFactory Class](../command-factory/command-factory.md) (see separate discussion).
 
 Command classes implement the functionality to perform data manipulation, analysis, and product generation.
 The command design provides flexibility and has been used to implement a wide variety of computational functionality.
 Command classes are typically created by implementing interfaces:
 
-* [Specific Command class](#specific-command-class)
-	+ Extends [AbstractCommand](#abstractcommand-class) - manages command data and provides default implementation
-		- `AbstractCommand` implements [Command Interface](#command-interface)
-	+ Implements:
-		- [CommandStatusProvider interface](#commandstatusprovider-interface) - methods to provide command log/status
-		- [CommandDiscoverable interface](#commanddiscoverable-interface) - methods to run in discovery (pre-run) mode
-		- [FileGenerator interface](#filegenerator-interface) - method to retrieve list of generated files
+*   [Specific Command class](#specific-command-class)
+    +   Extends [AbstractCommand](#abstractcommand-class) - manages command data and provides default implementation
+        -   `AbstractCommand` implements [Command Interface](#command-interface)
+    +   Implements:
+        -   [CommandStatusProvider interface](#commandstatusprovider-interface) - methods to provide command log/status
+        -   [CommandDiscoverable interface](#commanddiscoverable-interface) - methods to run in discovery (pre-run) mode
+        -   [FileGenerator interface](#filegenerator-interface) - method to retrieve list of generated files
 
 ## Command Interface ##
 
@@ -66,7 +66,7 @@ simplifying tracking of success and failure.  See also the [CommandStatus](../co
 
 The [CommandDiscoverable](https://github.com/OpenCDSS/cdss-lib-common-java/blob/master/src/RTi/Util/IO/CommandDiscoverable.java)
 interface is implemented by commands that can run in "discovery" mode.
-For example, the [`NewTimeSeries`](http://learn.openwaterfoundation.org/cdss-app-statedmi-doc-user/command-ref/NewTimeSeries/NewTimeSeries/)
+For example, the [`NewTable`](https://opencdss.state.co.us/statedmi/latest/doc-user/command-ref/NewTable/NewTable/)
 command parameters provide enough information for the command
 to indicate that a new time series will have a specific identifier and alias.
 The discovery information is used to provide command editors for later commands with

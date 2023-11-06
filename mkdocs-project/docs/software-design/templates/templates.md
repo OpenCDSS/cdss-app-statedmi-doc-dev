@@ -4,8 +4,8 @@
 StateDMI does not currently handle templates.
 However, it could be enhanced to do so, similar to TSTool, when it makes sense.**
 
-* [Introduction](#itroduction)
-* [Software Design](#software-design)
+*   [Introduction](#itroduction)
+*   [Software Design](#software-design)
 
 -----------------
 
@@ -22,5 +22,5 @@ TSTool uses the [Apache Freemarker](https://freemarker.apache.org/) package to i
 
 The primary use of templates is:
 
-* [`ExpandTemplateFile`](http://learn.openwaterfoundation.org/cdss-app-tstool-doc-user/command-ref/ExpandTemplateFile/ExpandTemplateFile/) command for automation
-* time series product files have built in template functionality
+*   [`ExpandTemplateFile`](https://opencdss.state.co.us/tstool/latest/doc-user/command-ref/ExpandTemplateFile/ExpandTemplateFile/) command for automation
+*   time series product files have built in template functionality

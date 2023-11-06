@@ -1,31 +1,30 @@
 # Logging #
 
-* [Introduction](#introduction)
-* [Log Messages](#log-messages)
-* [Log Files](#log-files)
-* [Setting Logging Levels](#setting-logging-levels)
-* [Logging Code Performance](#logging-code-performance)
-* [Log File Viewer](#log-file-viewer)
-* [Potential Future Changes](#potential-future-changes)
+*   [Introduction](#introduction)
+*   [Log Messages](#log-messages)
+*   [Log Files](#log-files)
+*   [Setting Logging Levels](#setting-logging-levels)
+*   [Logging Code Performance](#logging-code-performance)
+*   [Log File Viewer](#log-file-viewer)
+*   [Potential Future Changes](#potential-future-changes)
 
 -------------
 
-**This documentation needs to be updated.  It contains some TSTool content.**
-
 ## Introduction ##
 
-TSTool uses a "home grown" logging approach that was developed early in the TSTool development history
+StateDMI uses a "home grown" logging approach that was developed early in the StateDMI development history
 because other options were not available that could meet requirements.
 See the [Message package](https://github.com/OpenCDSS/cdss-lib-common-java/blob/master/src/RTi/Util/Message/)
 and in particular the
 [Message class](https://github.com/OpenCDSS/cdss-lib-common-java/blob/master/src/RTi/Util/Message/Message.java) class.
-TSTool provides features to create a log file, view the log file contents interactively,
+StateDMI provides features to create a log file, view the log file contents interactively,
 and control the amount of output to the log file.
 Logging at a command level is also integrated via the
-[`CommandStatus` class](../CommandStatus/CommandStatus.md).
+[`CommandStatus` class](https://github.com/OpenCDSS/cdss-lib-common-java/blob/master/src/RTi/Util/IO/CommandStatus.java).
 A message is often logged using the [Message package](https://github.com/OpenCDSS/cdss-lib-common-java/blob/master/src/RTi/Util/Message/)
 to allow review of the session,
-and also logged to [`CommandStatus` class](../CommandStatus/CommandStatus.md) in cases where a message is important enough for user to see in the UI.
+and also logged to [`CommandStatus` class](https://github.com/OpenCDSS/cdss-lib-common-java/blob/master/src/RTi/Util/IO/CommandStatus.java)
+in cases where a message is important enough for user to see in the UI.
 
 ## Log Messages ##
 
@@ -38,16 +37,18 @@ but use logging to provide progress information and inform on issues.
 
 Numeric logging levels can be set for each message type.
 Whereas logging frameworks typically set this in a "handler" feature,
-the TSTool logging uses configuration data and levels passed in logging methods.
+the StateDMI logging uses configuration data and levels passed in logging methods.
 
-Log levels default in the main TSTool program and can then be set using the ***Tools / Diagnostics...*** menu
-(see below for diagnostic settings after TSTool startup)
+Log levels default in the main StateDMI program and can then be set using the ***Tools / Diagnostics...*** menu
+(see below for diagnostic settings after StateDMI startup)
 or the `SetDebugLevel` and `SetWarningLevel` commands.
 
-![tstool-diagnostics](tstool-diagnostics.png)
+**<p style="text-align: center;">
+![StateDMI diagnostics](statedmi-diagnostics.png)
+</p>**
 
 **<p style="text-align: center;">
-Tools / Diagnostics
+StateDMI / Diagnostics
 </p>**
 
 ### Warning and Error Message ###
@@ -81,7 +82,7 @@ The second message prints the stack to the `Message` class internal handlers.
 Although it may be a best practice to catch each expected exception and output a suitable message,
 it is often typical to catch `Exception` so that nothing falls through.
 
-Within TSTool, the following warning levels are typical:
+Within StateDMI, the following warning levels are typical:
 
 |**Warning Level**|**Description**|
 |--|--|
@@ -108,12 +109,12 @@ catch ( SomeException ) {
 
 Status messages are equivalent to "info" level in some logging frameworks.
 Status messages are useful to understand major "mile markers" in processing,
-such as when processing of a TSTool command starts and ends.
+such as when processing of a StateDMI command starts and ends.
 The following levels are typically used:
 
 |**Debug Level**|**Description**|
 |--|--|
-| `1` | Visible to user in a UI, such as the TSTool UI status area.|
+| `1` | Visible to user in a UI, such as the StateDMI UI status area.|
 | `2` | Important messages, logged to log file.|
 | `3+` | Other levels of messages. |
 
@@ -151,20 +152,20 @@ The following table summarizes typical debug levels.
 
 ## Log Files ##
 
-TSTool opens a default log file at startup.
+StateDMI opens a default log file at startup.
 Whereas older versions opened the log file in the software installation folder,
-newer versions use a startup log file in the `.tstool/log/` folder in the users files, whether Windows or Linux.
+newer versions use a startup log file in the `.statedmi/N/logs/` folder in the users files, whether Windows or Linux.
 This ensures that a log file can be written without administrator permissions.
 
 It is generally recommended that workflows use the
-[`StartLog`](http://learn.openwaterfoundation.org/cdss-app-tstool-doc-user/command-ref/StartLog/StartLog/)
+[`StartLog`](https://opencdss.state.co.us/statedmi/latest/doc-user/command-ref/StartLog/StartLog/)
 command to open a log file that has the same name as the command file, appended with `.log`.
 The log file specific to the command file can then be used to troubleshoot the command file.
 This approach is used with automated testing to ensure that an artifact exists to review the run.
 Log files are typically omitted from repositories using the `.gitignore` file.
 
 Opening a log file with the
-[`StartLog`](http://learn.openwaterfoundation.org/cdss-app-tstool-doc-user/command-ref/StartLog/StartLog/) command
+[`StartLog`](https://opencdss.state.co.us/statedmi/latest/doc-user/command-ref/StartLog/StartLog/) command
 closes the previous log file and starts the new log file.
 Consequently, use the startup log file to troubleshoot startup issues.
 
@@ -172,14 +173,14 @@ Consequently, use the startup log file to troubleshoot startup issues.
 
 Logging levels are set in a number of ways:
 
-1. Logging levels are set in the
-[Message class](https://github.com/OpenCDSS/cdss-lib-common-java/blob/master/src/RTi/Util/Message/Message.java) class.
-2. The [TSTool_Main](https://github.com/OpenCDSS/cdss-app-tstool-main/blob/master/src/DWR/DMI/tstool/TSToolMain.java)
-class adjusts based on TSTool defaults and optionally command line parameters.
-3. User can interactively change levels via the ***Tools / Diagnostics...*** menu.
-4. The [`SetDebugLevel`](http://learn.openwaterfoundation.org/cdss-app-tstool-doc-user/command-ref/SetDebugLevel/SetDebugLevel/) and
-[`SetWarningLevel`](http://learn.openwaterfoundation.org/cdss-app-tstool-doc-user/command-ref/SetWarningLevel/SetWarningLevel/) commands can change logging levels,
-and are typically used with [`StartLog`](http://learn.openwaterfoundation.org/cdss-app-tstool-doc-user/command-ref/StartLog/StartLog/) command.
+1.  Logging levels are set in the
+    [Message class](https://github.com/OpenCDSS/cdss-lib-common-java/blob/master/src/RTi/Util/Message/Message.java) class.
+2.  The [StateDMI main](https://github.com/OpenCDSS/cdss-app-statedmi-main/blob/master/src/DWR/DMI/StateDMI/StateDMI.java)
+    class adjusts based on StateDMI defaults and optionally command line parameters.
+3.  User can interactively change levels via the ***Tools / Diagnostics...*** menu.
+4.  The [`SetDebugLevel`](https://opencdss.state.co.us/statedmi/latest/doc-user/command-ref/SetDebugLevel/SetDebugLevel/) and
+    [`SetWarningLevel`](https://opencdss.state.co.us/statedmi/latest/doc-user/command-ref/SetWarningLevel/SetWarningLevel/) commands can change logging levels,
+    and are typically used with [`StartLog`](https://opencdss.state.co.us/statedmi/latest/doc-user/command-ref/StartLog/StartLog/) command.
 
 Log levels are typically left at the default unless troubleshooting the application.
 In this case, 
@@ -194,13 +195,13 @@ For example, output status message that indicate how many milliseconds were requ
 
 ## Log File Viewer ##
 
-TSTool's ***Tools / View Log File*** menu displays an interactive log file viewer.
+StateDMI's ***Tools / View Log File*** menu displays an interactive log file viewer.
 This tool uses custom logging features, such as using the command line number in a command file to
 cross-reference log messages.
 
 ## Potential Future Changes ##
 
-The current logging approach may be replaced with a standard logging library such as [SLF4J](../resources#slf4j)
+The current logging approach may be replaced with a standard logging library such as [SLF4J](../../resources.md#slf4j)
 if resources allow.
 Significant redesign may be necessary in order to continue providing features consistent with the existing software,
 such as the log file viewer.

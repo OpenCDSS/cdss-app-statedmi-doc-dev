@@ -19,28 +19,30 @@ specific instructions are included below (rather than immediately linking to oth
 After reading instructions for a step, use "back" to return to this outline so that setup instructions can be followed in the proper sequence.
 **Bold comments** indicate which steps are required and which are optional.
 
-1. **Required:** [Machine for Development](../dev-env/machine.md) - need a suitable computer
-2. **Required:** [Create folder for development files](#create-folder-for-development-files) - where development will occur (**see details below**)
-3. **Required (if not already installed):** Development Environment software install part 1 (version control)
-	* [Development Environment / Git](../dev-env/git.md) - install Git software so the repositories can be cloned
-4. **Required:** [Clone Git Repositories](#clone-git-repositories) - clone the repositories to get access to all files (**see details below**)
-5. **Required:** Development Environment software install part 2 (Java development tools)
-	* **Required:** [Development Environment / Java 8](../dev-env/java8.md) - make sure Java 8 is available on system
-	* **Required (if not already installed):** [Development Environment / Eclipse](../dev-env/eclipse.md) - install Eclipse for use as IDE
-	* **Optional:** [Development Environment / KDiff3](../dev-env/kdiff3.md) - install software to facilitate comparing files
-	**(highly useful and can be used with Git)**
-	* **Optional:** [Development Environment / NSIS](../dev-env/nsis.md) - install software to create StateDMI software installer
-	* **Optional:** [Development Environment / launch4j](../dev-env/launch4j.md) - install software to create StateDMI software installer
-6. **Required:** Eclipse Workspace Setup (interactive development environment)
-	* **Required:** [Create Eclipse Workspace Folder](#create-eclipse-workspace-folder) - simple manual step (***see details below***)
-	* **Required:** [Import the Existing Eclipse StateDMI Projects from the Git Repository Folders](#import-the-existing-eclipse-statedmi-projects-from-the-git-repository-folders) -  import
-	from Git repository working files (**see details below**)
-7. **Optional:** Development Environment software install part 3 (documentation tools), **(install if will view and edit documentation within the development environment)**
-	* [Development Environment / Python and pip](../dev-env/python.md) - install Python, which is needed by MkDocs
-	* [Development Environment / MkDocs](../dev-env/mkdocs.md) - install MkDocs to view/edit full documentation locally.
-	See [Development Tasks / Documenting](../dev-tasks/overview.md#documenting)
-	for instructions on viewing documentation.
-8. [Next Steps - Development Tasks](#next-steps-development-tasks) - be productive!
+1.  **Required:** [Machine for Development](../dev-env/machine.md) - need a suitable computer
+2.  **Required:** [Create folder for development files](#create-folder-for-development-files) - where development will occur (**see details below**)
+3.  **Required (if not already installed):** Development Environment software install part 1 (version control)
+    *   [Development Environment / Git](../dev-env/git.md) - install Git software so the repositories can be cloned
+4.  **Required:** [Clone Git Repositories](#clone-git-repositories) - clone the repositories to get access to all files (**see details below**)
+5.  **Required:** Development Environment software install part 2 (Java development tools)
+    *   **Required:** [Development Environment / Java](../dev-env/java.md) - make sure the correct Java version is available on system
+    *   **Required (if not already installed):** [Development Environment / Eclipse](../dev-env/eclipse.md) - install Eclipse for use as IDE
+    *   **Optional:** [Development Environment / KDiff3](../dev-env/kdiff3.md) - install software to facilitate comparing files
+        **(highly useful and can be used with Git)**
+    *   **Optional:** [Development Environment / NSIS](../dev-env/nsis.md) - install software to create StateDMI software installer
+    *   **Optional:** [Development Environment / launch4j](../dev-env/launch4j.md) - install software to create StateDMI software installer
+6.  **Required:** Eclipse Workspace Setup (interactive development environment)
+    *   **Required:** [Create Eclipse Workspace Folder](#create-eclipse-workspace-folder) - simple manual step (***see details below***)
+    *   **Required:** [Import the Existing Eclipse StateDMI Projects from the Git Repository Folders](#import-the-existing-eclipse-statedmi-projects-from-the-git-repository-folders):
+        -   [Import Code Repositories](#import-code-repositories)
+        -   [Additional Eclipse Configuration](#additional-eclipse-configuration)
+            from Git repository working files (**see details below**)
+7.  **Optional:** Development Environment software install part 3 (documentation tools), **(install if will view and edit documentation within the development environment)**
+    *   [Development Environment / Python and pip](../dev-env/python.md) - install Python, which is needed by MkDocs
+    *   [Development Environment / MkDocs](../dev-env/mkdocs.md) - install MkDocs to view/edit full documentation locally.
+    See [Development Tasks / Documenting](../dev-tasks/overview.md#documenting)
+    for instructions on viewing documentation.
+8.  [Next Steps - Development Tasks](#next-steps-development-tasks) - to compile, edit, run, etc.
 
 The following sections are referenced from the above outline.
 
@@ -48,9 +50,12 @@ The following sections are referenced from the above outline.
 
 ## Create Folder for Development Files ##
 
-Create a development home folder consistent with the [initial project setup](../project-init/overview.md) - this
-is an umbrella folder for all StateDMI development files,
+Create a development home folder in user files consistent with the
+[repository Development Environment Folder Structure](https://github.com/OpenCDSS/cdss-app-statedmi-main#development-environment-folder-structure)
+(see also the [initial project setup](../project-init/overview.md)).
+This is an umbrella folder for all StateDMI development files,
 including software tools that are installed locally (as appropriate).
+
 It is assumed that development will occur within a developer's home folder on the computer in order to provide separation from the
 work of other developers on the computer.
 Tools such as Git rely on a unique identity for developers in order to properly track edits to files
@@ -341,7 +346,7 @@ Open the workspace in Eclipse in preparation of adding the code project from the
 If the `eclipse-workspace` folder does not exist, it can be created using the Eclipse dialog.
 Select the workspace as shown in the following figure.
 
-![eclipse-workspace-select](images/eclipse-workspace-select.png)
+![Select Eclipse workspace](images/eclipse-workspace-select.png)
 
 The Eclipse workspace folder is identified by a `.metadata` folder, which will be hidden on Linux.
 
@@ -361,29 +366,29 @@ This approach may be changed as resources are allocated to evolving the developm
 The repositories fall into four categories, which are discussed in the following sections.
 All of the repositories obviously use Git for version control (Eclipse generally detects this automatically when a project is imported).
 
-1. Code repositories with names ending with `java` are treated as Java projects.
-2. The CDSS build utility repository `cdss-util-buildtools` is treated as a general project as is currently required to create the software installer.
-3. The StateDMI function test repository `cdss-app-statedmi-test` is treated as a general project and is useful to import into Eclipse.
-4. Documentation repositories with `doc` in names can be treated as general projects
-and do not need to be imported because their files are typically edited outside of Eclipse.
+1.  Code repositories with names ending with `java` are treated as Java projects.
+2.  The CDSS build utility repository `cdss-util-buildtools` is treated as a general project as is currently required to create the software installer.
+3.  The StateDMI function test repository `cdss-app-statedmi-test` is treated as a general project and is useful to import into Eclipse.
+4.  Documentation repositories with `doc` in names can be treated as general projects
+    and do not need to be imported because their files are typically edited outside of Eclipse.
 
 ### Import Code Repositories ###
 
 After Eclipse is started and the initial Eclipse workspace is selected,
 import the following repositories by following the same general procedure indicated below:
 
-* `cdss-app-statedmi-main`
-* `cdss-lib-cdss-java`
-* `cdss-lib-common-java`
-* `cdss-lib-dmi-hydrobase-java`
-* `cdss-lib-dmi-hydrobase-rest-java`
-* `cdss-lib-models-java`
+*   `cdss-app-statedmi-main`
+*   `cdss-lib-cdss-java`
+*   `cdss-lib-common-java`
+*   `cdss-lib-dmi-hydrobase-java`
+*   `cdss-lib-dmi-hydrobase-rest-java`
+*   `cdss-lib-models-java`
 
 The initial workspace will be similar to the following (if necessary, close the ***Welcome*** tab).
 Use the ***Help / About Eclipse*** menu to check the Eclipse version,
 which should be consistent with the ***Development Environment / Eclipse*** instructions.
 
-![eclipse-worskpace-0](images/eclipse-workspace-0.png)
+![Select Eclipse worskpace](images/eclipse-workspace-0.png)
 
 Because the `.project` files have already been created and are included in the repository,
 a general import of existing project can occur and Eclipse will figure out other
@@ -391,12 +396,12 @@ information such as whether a Java project.
 Use the ***File / Import...*** menu to start an import, as shown in the following figure.
 Click on ***General*** to expand the choices and then on ***Existing Projects into Workspace***.
 
-![eclipse-workspace-1](images/eclipse-workspace-1.png)
+![Select Eclipse workspace](images/eclipse-workspace-1.png)
 
 Press ***Next >*** in the above dialog to continue to the following step.
 Use the ***Browse...*** button to browse to the `git-repos` folder where repositories where cloned.
 
-![eclipse-workspace-3](images/eclipse-workspace-3.png)
+![Select Eclipse workspace](images/eclipse-workspace-3.png)
 
 All the existing projects can be added at once as shown in the following image.
 Note that ***Copy projects into workspace*** is NOT checked and defaults
@@ -412,15 +417,21 @@ in the following image there were no fatal errors that prevented a build.
 The right arrow (***>***) symbol next to a component indicates that there are changes,
 in this case because the files were being modified to create this documentation.
 
-![eclipse-workspace-4](images/eclipse-workspace-4.png)
+![Select Eclipse workspace](images/eclipse-workspace-4.png)
 
 *Press* ***back*** *in the browser to return to the outline.*
+
+### Additional Eclipse Configuration ###
+
+Additional Eclipse configuration may be necessary.
+
+See the [steps performed for the TSTool development environment](https://opencdss.state.co.us/tstool/14.9.0/doc-dev/dev-new/overview/#additional-eclipse-configuration).
 
 ## Next Steps - Development Tasks ##
 
 At this point it should be possible to [compile](../dev-tasks/overview.md#compiling) and
 [run](../dev-tasks/overview#running) StateDMI within the Eclipse interface].  See also:
 
-* [Deployed Environment / Overview](../deployed-env/overview.md) - for an overview of the deployed software
-* [Software Design / Overview](../software-design/overview.md) - to understand software structure and logic
-* [Development Tasks / Overview](../dev-tasks/overview.md) - common development tasks
+*   [Deployed Environment / Overview](../deployed-env/overview.md) - for an overview of the deployed software
+*   [Software Design / Overview](../software-design/overview.md) - to understand software structure and logic
+*   [Development Tasks / Overview](../dev-tasks/overview.md) - common development tasks

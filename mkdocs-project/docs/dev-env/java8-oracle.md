@@ -1,14 +1,18 @@
-# StateDMI / Development Environment / Java 8 ##
+# StateDMI / Development Environment / Oracle Java 8 #
 
-* [Introduction](#introduction)
-* [Download Java 8](#download-java-8)
-* [Install Java 8](#install-java-8)
-* [Create Symbolic Links for Java 8](#ceate-symbolic-links-for-java-8)
-* [Confirm Run Script Configuration](#confirm-run-script-configuration)
+*   [Introduction](#introduction)
+*   [Download Java 8](#download-java-8)
+*   [Install Java 8](#install-java-8)
+*   [Create Symbolic Links for Java 8](#ceate-symbolic-links-for-java-8)
+*   [Confirm Run Script Configuration](#confirm-run-script-configuration)
 
 ------
 
 ## Introduction ##
+
+This documentation is an archive of old documentation that was used to set up the Java 8 development environment
+using Oracle Java 8 through TSTool 5.1.5,
+including discussion of 32-bit environment.
 
 Java 8 is currently used for StateDMI development, consistent with TSTool.
 StateDMI does not currently use any native 32-bit third-party libraries (like TSTool); therefore,
@@ -23,7 +27,7 @@ The major version (8) is important and otherwise the latest minor version can be
 for recent operating systems and for security patches.
 
 Download the Java SE Development Kit from the
-[Oracle Java Download Site](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+[Oracle Java Download Site](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 
 The 32-bit version is named `Windows x86` or similar and the download file will be named `jdk-8u171-windows-i586.exe` or similar.
 
@@ -32,23 +36,23 @@ The 32-bit version is named `Windows x86` or similar and the download file will 
 Run the installer from the previous step.  Administrator privileges will be required.
 The following procedure may vary slightly as new Java releases are made.
 
-![java8-32-1](images/java8-32-1.png)
+![java8-32-1](images/oracle-java8/java8-32-1.png)
 
 Press ***Next >*** to continue.
 
-![java8-32-2](images/java8-32-2.png)
+![java8-32-2](images/oracle-java8/java8-32-2.png)
 
 Accept the defaults in the above dialog without changing.
 Note that since installing the 32-bit version the installation folder is `C:\Program Files (x86)`.
 Other installations of Java may already exist on the computer, which is OK.
 Press ***Next >*** to continue.
 
-![java8-32-3](images/java8-32-3.png)
+![java8-32-3](images/oracle-java8/java8-32-3.png)
 
 Accept the defaults in the above dialog without changing.
 Press ***Next >*** to continue.  A progress indicator will be shown.
 
-![java8-32-4](images/java8-32-4.png)
+![java8-32-4](images/oracle-java8/java8-32-4.png)
 
 Press ***Close*** to close the above dialog.
 
@@ -56,7 +60,7 @@ Press ***Close*** to close the above dialog.
 
 The Java installation process creates files as shown in the following image.
 
-![java8-32-5](images/java8-32-5.png)
+![java8-32-5](images/oracle-java8/java8-32-5.png)
 
 The use of version-specific folder can be problematic because Eclipse Java Runtime Environment and build utilities must
 be configured to use the specific version.
@@ -71,7 +75,7 @@ mklink /d jdk8 jdk1.8.0_171
 mklink /d jre8 jre1.8.0_171
 ```
 
-![java8-32-6-link](images/java8-32-6-link.png)
+![java8-32-6-link](images/oracle-java8/java8-32-6-link.png)
 
 In addition, the automated build system uses JRE folder that requires another symbolic link to find the JRE to distribute with the installer.
 Create the link as follows in the `C:\Program Files (x86)\Java` folder:

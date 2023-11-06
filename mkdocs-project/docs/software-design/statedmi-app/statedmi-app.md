@@ -1,9 +1,9 @@
 # StateDMI Application #
 
-* [Introduction](#introduction)
-* [Launching](#launching)
-* [Configuration](#configuration)
-* [User Interface (UI)](#user-interface-ui)
+*   [Introduction](#introduction)
+*   [Launching](#launching)
+*   [Configuration](#configuration)
+*   [User Interface (UI)](#user-interface-ui)
 
 -----
 
@@ -47,8 +47,8 @@ with sections and #-comments is used for `StateDMI.cfg`.
 These simple formats will likely continue to be used, although JSON may be adopted where it has benefits,
 such as hierarchical time series product files.
 
-The [Installation StateDMI appendix in the User Documentation](http://learn.openwaterfoundation.org/cdss-app-statedmi-doc-user/appendix-install/install/),
-as well as [Datastore documentation](http://learn.openwaterfoundation.org/cdss-app-statedmi-doc-user/datastore-ref/overview/)
+The [Installation StateDMI appendix in the User Documentation](https://opencdss.state.co.us/statedmi/latest/doc-user/appendix-install/install/),
+as well as [Datastore documentation](https://opencdss.state.co.us/statedmi/latest/doc-user/datastore-ref/overview/)
 describes configuration files.
 
 ## User Interface (UI) ##
