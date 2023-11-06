@@ -2,24 +2,24 @@
 
 This documentation describes how to create and package the StateDMI installer.
 
-* [Overview](#overview)
-* [Build Tools](#build-tools) - tools used to build the installer
-	+ [cdss-util-buildtools](#cdss-util-buildtools)
-	+ [Eclipse IDE External Tools](#eclipse-ide-external-tools)
-	+ [NSIS](#nsis)
-	+ [Java Runtime Environment](#java-runtime-environment)
-	+ [launch4j](#launch4j)
-* [Build Steps](#build-steps) - the sequence of steps to build the installer
-	+ [1. Coordination](#1-coordination)
-	+ [2. Release Setup](#2-release-setup)
-	+ [3. Clean Build](#3-clean-build)
-	+ [4. Update Documentation](#4-update-documentation)
-	+ [5. Create Local Distribution](#5-create-local-distribution)
-	+ [6. Create Installer](#6-create-installer)
-	+ [7. Run the Installer and Test Software](#7-run-the-installer-and-test-software)
-	+ [8. Publish the Installer](#8-publish-the-installer)
-	+ [9. Repository Maintenance](#9-repository-maintenance)
-* [Creating a Linux Installer](#creating-a-linux-installer)
+*   [Overview](#overview)
+*   [Build Tools](#build-tools) - tools used to build the installer
+    +   [cdss-util-buildtools](#cdss-util-buildtools)
+    +   [Eclipse IDE External Tools](#eclipse-ide-external-tools)
+    +   [NSIS](#nsis)
+    +   [Java Runtime Environment](#java-runtime-environment)
+    +   [launch4j](#launch4j)
+*   [Build Steps](#build-steps) - the sequence of steps to build the installer
+    +   [1. Coordination](#1-coordination)
+    +   [2. Release Setup](#2-release-setup)
+    +   [3. Clean Build](#3-clean-build)
+    +   [4. Update Documentation](#4-update-documentation)
+    +   [5. Create Local Distribution](#5-create-local-distribution)
+    +   [6. Create Installer](#6-create-installer)
+    +   [7. Run the Installer and Test Software](#7-run-the-installer-and-test-software)
+    +   [8. Publish the Installer](#8-publish-the-installer)
+    +   [9. Repository Maintenance](#9-repository-maintenance)
+*   [Creating a Linux Installer](#creating-a-linux-installer)
 
 ----------------
 
@@ -27,7 +27,7 @@ This documentation describes how to create and package the StateDMI installer.
 
 The StateDMI installer depends on the target operating system:
 
-* ![Windows logo](../../images/windows-32.png) Windows - self-extracting installer (e.g., `StateDMI_CDSS_04.05.00beta_Setup.exe`.
+*   ![Windows logo](../../images/windows-32.png) Windows - self-extracting installer (e.g., `StateDMI_CDSS_04.05.00beta_Setup.exe`.
 
 The Windows installer uses the following technologies to create the installer.
 Note that Eclipse Ant is used and not Maven.
@@ -36,12 +36,12 @@ however, StateDMI is complex and sufficient resources need to be available to
 evaluate Maven implementation and impacts that it has on the existing (working) build processes.
 The following are software tools used to create the installer
 
-* Eclipse IDE is used to run build processes using ***External Tools Configurations*** - see [instructions for installing Eclipse](../../dev-env/eclipse.md).
-* Eclipse Ant is used to automate tasks.
-* Java Runtime Environment (JRE) compatible with StateDMI version is packaged with the installer - see [instructions for installing Java](../../dev-env/java8.md).
-* The NSIS software is used to create self-extracting installer for Windows - see [instructions for installing NSIS](../../dev-env/nsis.md).
-* The launch4j software is used to create a launcher for StateDMI, so that it behaves similar to other executable programs - see
-[instructions for installing launch4j](../../dev-env/launch4j.md).
+*   Eclipse IDE is used to run build processes using ***External Tools Configurations*** - see [instructions for installing Eclipse](../../dev-env/eclipse.md).
+*   Eclipse Ant is used to automate tasks.
+*   Java Runtime Environment (JRE) compatible with StateDMI version is packaged with the installer - see [instructions for installing Java](../../dev-env/java.md).
+*   The NSIS software is used to create self-extracting installer for Windows - see [instructions for installing NSIS](../../dev-env/nsis.md).
+*   The launch4j software is used to create a launcher for StateDMI, so that it behaves similar to other executable programs - see
+    [instructions for installing launch4j](../../dev-env/launch4j.md).
 
 This build process is parallel to the normal Eclipse build process, but they are separate in some ways.
 For example, Eclipse compiles source Java files located in `src` folders into class files located in the parallel `bin` folder.
@@ -113,7 +113,7 @@ operating system versions.
 
 ### launch4j ###
 
-[launch4j](http://launch4j.sourceforge.net/) is open source software that wraps Java Runtime Environment (JRE) startup for
+[launch4j](https://launch4j.sourceforge.net/) is open source software that wraps Java Runtime Environment (JRE) startup for
 a Java program so that startup is more streamlined, similar to running any executable program.
 There are multiple benefits including being able to configure the title that is shown when a program is minimized
 in the task bar, allowing configuration by a text file, etc.
@@ -146,15 +146,15 @@ There are two main places that version information needs to be specified.
 These should be changed as soon after making a release as possible (and planning for the next release)
 to minimize confusion and overwriting the previous release installer in the development environment.
 
-1. **StateDMI Main Program Code** - The [StateDMI.java](https://github.com/OpenCDSS/cdss-app-statedmi-main/blob/master/src/DWR/DMI/StateDMI/StateDMI.java) file
-sets the `PROGRAM_VERSION` with format similar to `4.05.00 (2016-10-05)`.
-By convention, the parts of the version have been padded with zeros (this may change in the future).  If necessary, `beta` can be added
-to the version, such as `4.05.00beta (2016-10-05)`.
-This information is shown in the ***Help / About*** dialog.
-2. **Build Process Configuration File** - The
-[cdss-app-statedmi-main repository product properties file](https://github.com/OpenCDSS/cdss-app-statedmi-main/blob/master/conf/product.properties)
-contains important properties used by the build system to create the installer.
-The `nsis.version` and `exe.version` properties are used by NSIS to create the installer.
+1.  **StateDMI Main Program Code** - The [StateDMI.java](https://github.com/OpenCDSS/cdss-app-statedmi-main/blob/master/src/DWR/DMI/StateDMI/StateDMI.java) file
+    sets the `PROGRAM_VERSION` with format similar to `4.05.00 (2016-10-05)`.
+    By convention, the parts of the version have been padded with zeros (this may change in the future).  If necessary, `beta` can be added
+    to the version, such as `4.05.00beta (2016-10-05)`.
+    This information is shown in the ***Help / About*** dialog.
+2.  **Build Process Configuration File** - The
+    [cdss-app-statedmi-main repository product properties file](https://github.com/OpenCDSS/cdss-app-statedmi-main/blob/master/conf/product.properties)
+    contains important properties used by the build system to create the installer.
+    The `nsis.version` and `exe.version` properties are used by NSIS to create the installer.
 
 ### 3. Clean Build ###
 
@@ -206,9 +206,9 @@ The resulting files will be as shown below:
 
 ![Windows Explorer window showing file path git-repos/cdss-app-tstool-main/dist](images/eclipse-external-tools-create-dist.png)
 
-* `install-cdss` - contains an image of all the files in the distribution before packaging
-* `cdss-app-statedmi-main_18.jar` - the Jar file for the main StateDMI application corresponding to the repository
-* `StateDMI_CDSS_12.05.00_Setup.exe` - setup file that will install StateDMI on the Windows computer
+*   `install-cdss` - contains an image of all the files in the distribution before packaging
+*   `cdss-app-statedmi-main_18.jar` - the Jar file for the main StateDMI application corresponding to the repository
+*   `StateDMI_CDSS_12.05.00_Setup.exe` - setup file that will install StateDMI on the Windows computer
 
 The version number for the installer file will match the version in the `product-properties` file.
 
@@ -235,9 +235,9 @@ See the [Deploying](../deploying/deploying.md) documentation.
 
 When a release has been made, especially for an important milestone, each repository should be maintained, for example:
 
-* Create a tag with a name similar to `StateDMI-4.05.00`.
-This will allow a developer to recreate a historical version, should that be needed.
-* Close issues that were resolved.
+*   Create a tag with a name similar to `StateDMI-4.05.00`.
+    This will allow a developer to recreate a historical version, should that be needed.
+*   Close issues that were resolved.
 
 ## Creating a Linux Installer ##
 

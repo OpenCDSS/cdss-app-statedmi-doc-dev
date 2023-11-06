@@ -2,21 +2,15 @@
 
 This documentation explains to to deploy the software and documentation to published locations.
 
-* [Deploy Software Installer](#deploy-software-installer)
-* [Deploy Documentation](#deploy-documentation)
+*   [Deploy Software Installer](#deploy-software-installer)
+*   [Deploy Documentation](#deploy-documentation)
 
 ---------------
 
 ## Deploy Software Installer ##
 
-The installer that is created in the `dist` folder in the main StateDMI repository has in the past been deployed to the
-[Google Sites CDSS Staging page](https://sites.google.com/site/cdssstaging/statedmi/download) that OWF created in 2013.
-However, this site needs to be migrated to a CDSS/OpenCDSS website,
-perhaps with continued backup on the [new OWF software website](http://software.openwaterfoundation.org/).
-
-The GitHub repository ***Releases*** tool can also be used to upload installers.
-Releases can also be used for intermediate releases for third-party testing
-but public releases on the CDSS website don't need to include all intermediate releases.
+The installer that is created in the `dist` folder in the main StateDMI repository
+is published by running the `build-util/copy-to-co-dnr-gcp.bash` script in a Git Bash.
 
 ## Deploy Documentation ##
 

@@ -3,8 +3,8 @@
 **This documentation needs to updated.  It is a copy from TSTool.
 StateDMI support for Excel spreadsheets has recently been added by copying TSTool code.**
 
-* [Introduction](#introduction)
-* [Spreadsheet Code Design](#sreadsheet-code-design)
+*   [Introduction](#introduction)
+*   [Spreadsheet Code Design](#sreadsheet-code-design)
 
 ---------
 

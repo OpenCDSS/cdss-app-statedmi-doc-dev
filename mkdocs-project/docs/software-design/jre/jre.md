@@ -2,12 +2,12 @@
 
 This documentation focuses on technical issues related to the Java Runtime Environment.
 
-* [Java Language](#java-language)
-* [Java Runtime Environment (JRE)](#java-runtime-environment_1)
-* [32-bit and 64-bit Versions](#32-bit-and-64-bit-versions)
-* [Java Launcher](#java-launcher)
-* [Classpath](#classpath)
-* [Plugins and Class Loaders](#plugins-and-class-loaders)
+*   [Java Language](#java-language)
+*   [Java Runtime Environment (JRE)](#java-runtime-environment_1)
+*   [StateDMI JRE Version History](#statedmi-jre-version-history)
+*   [Java Launcher](#java-launcher)
+*   [Classpath](#classpath)
+*   [Plugins and Class Loaders](#plugins-and-class-loaders)
 
 --------------
 
@@ -37,12 +37,14 @@ The JRE is runs StateDMI via a StateDMI launcher program.
 On Windows, the open source [Launch4J](../../resources.md#launch4j)
 software is used to run StateDMI.
 
-## 32-bit and 64-bit Versions ##
+## StateDMI JRE Version History ##
 
-As of StateDMI version 4.05.x, 32-bit java is used, mainly for historical reasons and to be compatible with TSTool.
-Additional effort is needed to support 32- and 64-bit versions in the development and deployed environment.
-It is possible to replace the deployed JRE with alternate version by replacing
-the `jre_VERSION` folder with a different version of Java.
+The following is a history of major Java version changes for StateDMI:
+
+*   StataDMI 5.2.0 uses OpenJDK 64-bit Java 8
+*   StateDMI 5.0.0 uses Oracle 64-bit Java 8
+*   Prior to StateDMI 5.2.0, Oracle 32-bit Java is used,
+    mainly for historical reasons and to be compatible with TSTool.
 
 ## Classpath ##
 

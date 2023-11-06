@@ -4,10 +4,10 @@
 StateDMI does not currently create data products like graphs.
 However, it could be enhanced to do so, similar to TSTool, when it makes sense.**
 
-* [Introduction](#introduction)
-* [UI Product Generation](#ui-product-generation)
-* [Automated Product Generation](#automated-product-generation)
-* [TSView Reference and GRTS Package](#tsview-reference-and-grts-package)
+*   [Introduction](#introduction)
+*   [UI Product Generation](#ui-product-generation)
+*   [Automated Product Generation](#automated-product-generation)
+*   [TSView Reference and GRTS Package](#tsview-reference-and-grts-package)
 
 -----------------
 
@@ -25,7 +25,7 @@ The product properties can be further edited by right-clicking on a graph and us
 
 ## Automated Product Generation ##
 
-The [`ProcessTSProduct`](http://learn.openwaterfoundation.org/cdss-app-tstool-doc-user/command-ref/ProcessTSProduct/ProcessTSProduct/) command
+The [`ProcessTSProduct`](https://opencdss.state.co.us/tstool/latest/doc-user/command-ref/ProcessTSProduct/ProcessTSProduct/) command
 is the primary command used to automate data product creation.
 
 Time series product files (`*.tsp`) are used to describe data products.
@@ -35,18 +35,18 @@ This allows the data to be stored separately from the data products,
 which is important because data can be very large.
 Data products can also make use of templates by using `${Property}` notation and
 FreeMarker templating, as described in the
-[`ExpandTemplateFile`](http://learn.openwaterfoundation.org/cdss-app-tstool-doc-user/command-ref/ExpandTemplateFile/ExpandTemplateFile/) command.
+[`ExpandTemplateFile`](https://opencdss.state.co.us/tstool/latest/doc-user/command-ref/ExpandTemplateFile/ExpandTemplateFile/) command.
 The syntax of the product files is described in the next section.
 
 ## TSView Reference and GRTS Package ##
 
 Data products are described in the
-[TSView Documentation in the User Documentation](http://learn.openwaterfoundation.org/cdss-app-tstool-doc-user/appendix-tsview/tsview/).
+[TSView Documentation in the User Documentation](https://opencdss.state.co.us/tstool/latest/doc-user/appendix-tsview/tsview/).
 Extensive properties are available to describe in text form how to create graphical time series products.
 The TSView functionality is provided by the following code:
 
-* [`GRTS`](https://github.com/OpenWaterFoundation/cdss-lib-common-java/tree/master/src/RTi/GRTS) package - graphing for time series
-* [`GR`](https://github.com/OpenWaterFoundation/cdss-lib-common-java/tree/master/src/RTi/GR) package - underlying drawing library
+*   [`GRTS`](https://github.com/OpenCDSS/cdss-lib-common-java/tree/master/src/RTi/GRTS) package - graphing for time series
+*   [`GR`](https://github.com/OpenCDSS/cdss-lib-common-java/tree/master/src/RTi/GR) package - underlying drawing library
 
 The above libraries were developed at a time when other alternatives were not available.
 These packages are integrated with the core time series package to provide optimized graphing.

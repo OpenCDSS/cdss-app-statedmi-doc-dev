@@ -1,18 +1,18 @@
 # CDSS / StateDMI (Developer) #
 
 This developer documentation explains how to build, enhance, and maintain
-[Colorado's Decision Support Systems (CDSS)](http://cdss.state.co.us/Pages/CDSSHome.aspx) StateDMI software.
+[Colorado's Decision Support Systems (CDSS) StateDMI software](https://cdss.colorado.gov/software/statedmi).
 StateDMI software automates processing data files for StateCU and StateMod models,
 in particular files that are not handled by TSTool (which focuses on time series).
-See also the [StateDMI User Documentation](http://opencdss.state.co.us/statedmi/latest/doc-dev/)
+See also the [StateDMI User Documentation](https://opencdss.state.co.us/statedmi/latest/doc-user/).
 
-* [How to Use this Documentation](#how-to-use-this-documentation)
-* [Acknowledgements](#acknowledgements)
-* [Colorado's Decision Support Systems](#colorados-decision-support-systems)
-* [About the Open Water Foundation](#about-the-open-water-foundation)
-* [License](#license)
-* [Source Repository on GitHub](#source-repository-on-github)
-* [Release Notes](#release-notes)
+*   [How to Use this Documentation](#how-to-use-this-documentation)
+*   [Acknowledgements](#acknowledgements)
+*   [Colorado's Decision Support Systems](#colorados-decision-support-systems)
+*   [About the Open Water Foundation](#about-the-open-water-foundation)
+*   [License](#license)
+*   [Source Repository on GitHub](#source-repository-on-github)
+*   [Release Notes](#release-notes) - **this documentation has been updated for StateDMI 5.2.0**
 
 ----------------
 
@@ -35,12 +35,12 @@ Icons for Cygwin ![Cygwin](images/cygwin-32.png), Linux ![Linux](images/linux-32
 are included to help indicate documentation
 specific to an operating system.
 
-* [New Developer Setup](dev-new/overview/) - **new StateDMI software developers should start here**
-* [Development Tasks](dev-tasks/overview/) - describes common development tasks - **refer to this after new development environment is configured**
-* [REFERENCE: Software Design](software-design/overview/) - provides details about the software code design
-* [REFERENCE: Deployed Environment](deployed-env/overview/) - describes the deployed environment after software is installed
-* [REFERENCE: Development Environment](dev-env/overview/) - describes development environment software installation
-* [REFERENCE: Initial Project Setup](project-init/overview/) - describes initial project setup and file structure
+*   [New Developer Setup](dev-new/overview.md) - **new StateDMI software developers should start here**
+*   [Development Tasks](dev-tasks/overview.md) - describes common development tasks - **refer to this after new development environment is configured**
+*   [REFERENCE: Software Design](software-design/overview.md) - provides details about the software code design
+*   [REFERENCE: Deployed Environment](deployed-env/overview.md) - describes the deployed environment after software is installed
+*   [REFERENCE: Development Environment](dev-env/overview.md) - describes development environment software installation
+*   [REFERENCE: Initial Project Setup](project-init/overview.md) - describes initial project setup and file structure
 
 Use the navigation menu provided on the left side of the page to navigate the documentation sections within the full document.
 Use the navigation menu provided on the right side of the page to navigate the documentation sections with a page.
@@ -48,7 +48,7 @@ The navigation menus may not be displayed if the web browser window is narrow or
 in which case look for a menu icon to access the menus.
 Use the search feature to find documentation matching the search words.
 
-## Acknowledgements
+## Acknowledgements ##
 
 StateDMI has been developed by the Open Water Foundation (OWF) with significant
 funding provided by the Colorado Water Conservation Board (CWCB)
@@ -64,18 +64,18 @@ Feedback specific to CDSS functionality (e.g.,
 HydroBase, StateMod, StateModB, StateCU input)
 can also be provided using the [CDSS email address](mailto:DNR_OpenCDSS@state.co.us).
 
-### Software Components
+### Software Components ###
 
 The following components are used in StateDMI and require or request attribution:
 
-* [Material Theme icons](https://material.io/icons/) - these icons are used in documentation
+*   [Material Theme icons](https://material.io/icons/) - these icons are used in documentation
 
 ## Colorado's Decision Support Systems ##
 
 [Colorado's Decision Support Systems (CDSS)](https://www.colorado.gov/cdss)
 has been developed to answer important questions about Colorado's water resources.
-CDSS efforts are led by the [Colorado Water Conservation Board (CWCB)](http://cwcb.state.co.us)
-and [Colorado Division of Water Resources (DWR)](http://water.state.co.us).
+CDSS efforts are led by the [Colorado Water Conservation Board (CWCB)](https://cwcb.colorado.gov/)
+and [Colorado Division of Water Resources (DWR)](https://dwr.colorado.gov/).
 
 ![CDSS Website](index-images/CDSS-website.png)
 
@@ -95,11 +95,11 @@ In late 2016, the Open Water Foundation began the effort to move StateDMI and ot
 and establish open source software projects, referred to as "OpenCDSS".
 The OpenCDSS project is resulting in a significant evolution in how CDSS software development occurs,
 such as implementing version control with Git/GitHub and modernizing the development environment and documentation.
-See the [OpenCDSS Website](http://opencdss.state.co.us/opencdss/) for more information.
+See the [OpenCDSS Website](https://opencdss.state.co.us/opencdss/) for more information.
 
 ## About the Open Water Foundation ##
 
-The [Open Water Foundation](http://openwaterfoundation.org) is a nonprofit social enterprise that focuses
+The [Open Water Foundation](https://openwaterfoundation.org) is a nonprofit social enterprise that focuses
 on developing and supporting open source software for water resources,
 so that organizations can make better decisions about water.
 OWF also works to advance open data tools and implementation.
@@ -123,5 +123,5 @@ in order to avoid confusion with the legacy documentation and to facilitate upda
 
 ## Release Notes ##
 
-See the [StateDMI release notes](http://opencdss.state.co.us/statedmi/latest/doc-dev/appendix-release-notes/release-notes)
+See the [StateDMI release notes](https://opencdss.state.co.us/statedmi/latest/doc-dev/appendix-release-notes/release-notes)
 section of the StateDMI user documentation for information about StateDMI software changes.
