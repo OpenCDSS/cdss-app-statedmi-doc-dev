@@ -61,8 +61,13 @@ nav:
   - 'Git': dev-env/git.md
   - 'Python and pip': dev-env/python.md
   - 'MkDocs': dev-env/mkdocs.md
-  - 'Java': dev-env/java.md
-  - 'Eclipse': dev-env/eclipse.md
+  - 'Java':
+    - '11 OpenJDK': dev-env/java/java.md
+    - '8 OpenJDK': dev-env/java/java8-openjdk/java8-openjdk.md
+    - '8 Oracle': dev-env/java/java8-oracle/java8-oracle.md
+  - 'Eclipse':
+    - '2022-06': dev-env/eclipse/eclipse.md
+    - '2019-03': dev-env/eclipse/eclipse-2019-03/eclipse-2019-03.md
 #  - 'Text Editor': dev-env/editor.md
   - 'KDiff3': dev-env/kdiff3.md
   - 'NSIS': dev-env/nsis.md
@@ -83,6 +88,8 @@ nav:
 #  - 'Documentation, User (MkDocs)': project-init/doc-user.md
 #  - 'Documentation, API (Doxygen)': project-init/doc-doxygen.md
 #  - 'Git StateMod History': project-init/git-statemod-history.md
+- 'REFERENCE: Updating Java':
+  - 'Overview': update-java/overview.md
 # ------- configuration properties ---------------
 # Alphabetize
 # ------------------------------------------------

@@ -1,16 +1,20 @@
-# StateDMI / Development Environment / Java #
+# StateDMI / Development Environment / OpenJDK Java 8 #
 
 *   [Introduction](#introduction)
-*   ![Windows icon](../images/windows-32.png) [Windows](#windows)
+*   ![Windows icon](../../../images/windows-32.png) [Windows](#windows)
     +   [Download OpenJDK Java 8](#download-openjdk-java-8)
     +   [Install OpenJDK Java 8](#install-openjdk-java-8)
     +   [Create Symbolic Links for OpenJDK Java 8](#create-symbolic-links-for-openjdk-java-8)
     +   [Confirm OpenJDK Java 8 Eclipse Run Script Configuration](#confirm-openjdk-java-8-eclipse-run-script-configuration)
-*   ![Linux icon](../images/linux-32.png) [Linux](#linux)
+*   ![Linux icon](../../../images/linux-32.png) [Linux](#linux)
 
 ------
 
 ## Introduction ##
+
+**This documentation is an archive of old documentation that was used to set up the Java 8
+development environment using OpenJDK Java 8 64-bit, used for TSTool versions >= 14.9.0 and < 15.0.0.
+The documentation should only be used as a reference but not for current development.**
 
 StateDMI is written in Java and therefore the following Java software must be installed:
 
@@ -42,14 +46,14 @@ On Linux, the `bin/statedmi` run script searches for the most recent supported v
 
 The remainder of this documentation describes the latest supported development environment.
 
-## ![Windows icon](../images/windows-32.png) Windows ##
+## ![Windows icon](../../../images/windows-32.png) Windows ##
 
 The Java development and runtime environment has changed over time:
 
 *   Java 8 (OpenJDK):
     +   OpenJDK Java 8 (current development environment) - see below
 *   Java 8:
-    +   [Oracle Java 8](java8-oracle.md) - used for StateDMI 5.1.5 and earlier
+    +   [Oracle Java 8](../java8-oracle/java8-oracle.md) - used for StateDMI 5.1.5 and earlier
 *   Java 7 and earlier:
     +   not documented here but is mentioned in release notes
 
@@ -87,11 +91,11 @@ Note that the zip file contains a `jre` folder that can be distributed in the de
 folder contains unneeded source code.
 
 **<p style="text-align: center;">
-![OpenJDK Java 8 zip file contents](images/openjdk-java8/java8-1-zipfiles.png)
+![OpenJDK Java 8 zip file contents](images/java8-1-zipfiles.png)
 </p>**
 
 **<p style="text-align: center;">
-OpenJDK Java 8 Zip File Contents (<a href="../images/openjdk-java8/java8-1-zipfiles.png">see full-size image</a>)
+OpenJDK Java 8 Zip File Contents (<a href="../images/java8-1-zipfiles.png">see full-size image</a>)
 </p>**
 
 The packaging for files changed with Java 9.  The following image shows the main zip file contents for
@@ -99,22 +103,22 @@ OpenJDK 9 download file `OpenJDK9U-jdk_x64_windows_hotspot_9.0.4_11.zip`.
 Note that there is no `jre` folder for the Java Runtime Environment.
 
 **<p style="text-align: center;">
-![OpenJDK Java 9 JDK zip file contents](images/openjdk-java8/java9-1-zipfiles.png)
+![OpenJDK Java 9 JDK zip file contents](images/java9-1-zipfiles.png)
 </p>**
 
 **<p style="text-align: center;">
-OpenJDK Java 9 JDK Zip File Contents (<a href="../images/openjdk-java8/java9-1-zipfiles.png">see full-size image</a>)
+OpenJDK Java 9 JDK Zip File Contents (<a href="../images/java9-1-zipfiles.png">see full-size image</a>)
 </p>**
 
 The AdoptOpenJDK download page provides a separate download for JRE (the Oracle downloads page does not provide JRE downloads).
 For example the `OpenJDK9U-jre_x64_windows_hotspot_9.0.4_11.zip` file contents are as follows:
 
 **<p style="text-align: center;">
-![OpenJDK Java 9 JRE zip file contents](images/openjdk-java8/java9-2-jre-zipfiles.png)
+![OpenJDK Java 9 JRE zip file contents](images/java9-2-jre-zipfiles.png)
 </p>**
 
 **<p style="text-align: center;">
-OpenJDK Java 9 JRE Zip File Contents (<a href="../images/openjdk-java8/java9-2-jre-zipfiles.png">see full-size image</a>)
+OpenJDK Java 9 JRE Zip File Contents (<a href="../images/java9-2-jre-zipfiles.png">see full-size image</a>)
 </p>**
 
 ### Install OpenJDK Java 8 ###
@@ -132,11 +136,11 @@ The following shows older Oracle JDK (`jdk1.8.0_191`) and JRE installations with
 The other folders are links that are described in the next section.
 
 **<p style="text-align: center;">
-![Java program folders](images/openjdk-java8/java8-2-program-files.png)
+![Java program folders](images/java8-2-program-files.png)
 </p>**
 
 **<p style="text-align: center;">
-Java Program Files (<a href="../images/openjdk-java8/java8-2-program-files.png">see full-size image</a>)
+Java Program Files (<a href="../images/java8-2-program-files.png">see full-size image</a>)
 </p>**
 
 ### Create Symbolic Links for OpenJDK Java 8 ###
@@ -181,23 +185,23 @@ mklink /d jre_18 jdk8u382-b05\jre
 The resulting `C:\Program Files\Java` folder will have contents similar to the following:
 
 **<p style="text-align: center;">
-![Java program folders](images/openjdk-java8/java8-3-program-files-links.png)
+![Java program folders](images/java8-3-program-files-links.png)
 </p>**
 
 **<p style="text-align: center;">
-Java Program Files (<a href="../images/openjdk-java8/java8-3-program-files-links.png">see full-size image</a>)
+Java Program Files (<a href="../images/java8-3-program-files-links.png">see full-size image</a>)
 </p>**
 
-If Eclipse has been configured (see the [Eclipse](eclipse.md) configuration),
+If Eclipse has been configured (see the [Eclipse](../../eclipse/eclipse.md) configuration),
 the Eclipse ***Window / Preferences*** menu can be used to check what version of Java is being used.
 See the ***Java / Installed JREs*** preferences, which should look similar to the following (note the general `jdk8` folder name).
 
 **<p style="text-align: center;">
-![Eclipse Java interpreter preferences](images/openjdk-java8/java8-4-eclipse-preferences.png)
+![Eclipse Java interpreter preferences](images/java8-4-eclipse-preferences.png)
 </p>**
 
 **<p style="text-align: center;">
-Java Program Files (<a href="../images/openjdk-java8/java8-4-eclipse-preferences.png">see full-size image</a>)
+Java Program Files (<a href="../images/java8-4-eclipse-preferences.png">see full-size image</a>)
 </p>**
 
 To check the Java version being used at runtime in StateDMI,
@@ -208,11 +212,11 @@ use the ***Help / About StateDMI*** menu and then press the ***Show Software / S
 *   `java.version = 1.8.0_382` - should match the Java version configured above
 
 **<p style="text-align: center;">
-![StateDMI Java Runtime Properties](images/openjdk-java8/java8-5-runtime-properties.png)
+![StateDMI Java Runtime Properties](images/java8-5-runtime-properties.png)
 </p>**
 
 **<p style="text-align: center;">
-StateDMI Java Runtime Properties (<a href="../images/openjdk-java8/java8-5-runtime-properties.png">see full-size image</a>)
+StateDMI Java Runtime Properties (<a href="../images/java8-5-runtime-properties.png">see full-size image</a>)
 </p>**
 
 ### Confirm OpenJDK Java 8 Eclipse Run Script Configuration ###
@@ -220,9 +224,9 @@ StateDMI Java Runtime Properties (<a href="../images/openjdk-java8/java8-5-runti
 The order that Java and Eclipse are installed may vary.
 These major development environment components need to be configured appropriately and it is useful to use a run script to start Eclipse.
 
-*   [See information about the Eclipse run script](eclipse.md#check-eclipse-run-script) - ensures that a standard development environment is used
+*   [See information about the Eclipse run script](../../eclipse/eclipse.md#check-eclipse-run-script) - ensures that a standard development environment is used
 
-## ![Linux icon](../images/linux-32.png) Linux ##
+## ![Linux icon](../../../images/linux-32.png) Linux ##
 
 This documentation was prepared while installing StateDMI for Java 8 on a Debian Stretch Linux VirtualBox virtual machine.
 Other environments will be similar, using a Java version that is required for the StateDMI version.

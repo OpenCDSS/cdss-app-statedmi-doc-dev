@@ -1,15 +1,19 @@
-# StateDMI / Development Environment / Eclipse #
+# StateDMI / Development Environment / Eclipse 2019-03 #
 
 *   [Introduction](#introduction)
-*   ![Windows icon](../images/windows-32.png) [Windows](#windows)
+*   ![Windows icon](../../../images/windows-32.png) [Windows](#windows)
      +   [Download Eclipse](#download-eclipse)
      +   [Install Eclipse](#install-eclipse)
      +   [Check Eclipse Run Script](#check-eclipse-run-script)
-*   ![Linux icon](../images/linux-32.png) [Linux](#linux)
+*   ![Linux icon](../../../images/linux-32.png) [Linux](#linux)
 
 -----
 
 ## Introduction ##
+
+**This documentation is an archive of old documentation that was used to set up the
+Eclipse IDE development environment using Eclipse 2019-03, used for StateDMI versions < 6.0.0.
+The documentation should only be used as a reference but not for current development.**
 
 The Eclipse Integrated Development Environment (IDE) has traditionally been used for StateDMI software development and is recommended.
 Alternate IDEs may be supported at some point; however, investigating impacts of using other IDEs
@@ -18,7 +22,7 @@ Eclipse does have some issues and limitations, but other IDEs have different iss
 
 StateDMI development has typically occurred on Windows computers, although the software can be deployed to other operating systems.
 
-As discussed in the [Java](java.md) section,
+As discussed in the [Java](../../java/java.md) section,
 OpenJDK Java 8 is currently used for development as of StateDMI version 5.2.0.
 Oracle Java was used prior to 5.2.0.
 
@@ -33,7 +37,7 @@ The Eclipse workspace (`.metadata`) folder is not saved in Git repository and is
 is recommended to be saved in `eclipse-workspace` folder under the StateDMI product folder
 in a standard development folder structure.
 
-## ![Windows icon](../images/windows-32.png) Windows ##
+## ![Windows icon](../../../images/windows-32.png) Windows ##
 
 **This documentation was created for an older version of Eclipse and needs to be updated.
 The process for current installations is similar.**
@@ -71,7 +75,7 @@ assuming a standard installation folder.  For example, `build-util/run-eclipse-w
 This ensures that the proper versions of Eclipse and Java are used.
 If necessary, this script can be modified or other versions added over time (for example for new versions of Java and Eclipse).
 
-## ![Linux icon](../images/linux-32.png) Linux ##
+## ![Linux icon](../../../images/linux-32.png) Linux ##
 
 StateDMI is typically developed on Windows.
 The Linux environment is not the primary development or production environment,

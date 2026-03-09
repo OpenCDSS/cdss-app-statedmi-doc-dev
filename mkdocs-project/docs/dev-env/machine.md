@@ -7,14 +7,23 @@ with deployment to Windows and Linux.
 Development on Linux computer should be possible.
 
 *   Windows:
-    +   Windows 10+ (7 and older versions may also work)
+    +   Windows 10+
 *   Linux:
-    +   Confirm that Java 8 is available as a distribution (or later Java depending on StateDMI version):
-        -   Oracle Java has traditionally be used for development
+    +   Confirm that Java 11 is available as a distribution (or later Java depending on StateDMI version):
+        -   OpenJDK Java is used for development and releases
         -   Other Java distributions may be appropriate
 *   Memory: 8GB minimum, 16GB or 32GB will help improve performance
 *   Administrator privileges are required for initial setup and likely will be required
     to install and configure additional software later, as well as to test installers
+
+## Use of Git Bash ##
+
+This documentation recommends installing Git for Windows, which includes Git Bash.
+Git Bash provides a Linux shell running in Windows. Git Bash scripts are used for some automated tasks.
+Creating files in Git Bash results in end of line characters that are consistent with Windows,
+which tends to avoid issues seen with Cygwin (see the next section).
+
+## Use of Cygwin ##
 
 The Cygwin environment can be used to facilitate development on Windows, with the following constraints:
 

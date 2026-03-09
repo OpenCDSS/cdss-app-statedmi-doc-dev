@@ -27,21 +27,15 @@ buildMkDocsSite() {
 checkMkdocsVersion() {
   # Required MkDocs version is at least 1.
   requiredMajorVersion="1"
-  # On Cygwin, mkdocs --version gives:  mkdocs, version 1.0.4 from /usr/lib/python3.6/site-packages/mkdocs (Python 3.6).
-  # On Debian Linux, similar to Cygwin:  mkdocs, version 0.17.3.
-  if [ "${operatingSystem}" = "cygwin" -o "${operatingSystem}" = "linux" ]; then
-    mkdocsVersionFull=$(mkdocs --version)
-  elif [ "${operatingSystem}" = "mingw" ]; then
-    mkdocsVersionFull=$(py -m mkdocs --version)
-  else
-    echo ""
-    echo "Don't know how to run on operating system: ${operatingSystem}"
-    exit 1
-  fi
+  # On Cygwin, mkdocs --version gives:  mkdocs, version 1.0.4 from /usr/lib/python3.6/site-packages/mkdocs (Python 3.6)
+  # On Debian Linux, similar to Cygwin:  mkdocs, version 0.17.3
+  # On newer windows: MkDocs --version:  python -m mkdocs, version 1.3.1 from C:\Users\steve\AppData\Local\Programs\Python\Python310\lib\site-packages\mkdocs (Python 3.10)
+  # The following should work for any version after a comma.
+  mkdocsVersionFull=$(${mkdocsExe} --version | sed -e 's/.*, \(version .*\)/\1/g' | cut -d ' ' -f 2)
   echo "MkDocs --version:  ${mkdocsVersionFull}"
-  mkdocsVersion=$(echo ${mkdocsVersionFull} | cut -d ' ' -f 3)
+  mkdocsVersion=$(echo "${mkdocsVersionFull}" | cut -d ' ' -f 3)
   echo "MkDocs full version number:  ${mkdocsVersion}"
-  mkdocsMajorVersion=$(echo ${mkdocsVersion} | cut -d '.' -f 1)
+  mkdocsMajorVersion=$(echo "${mkdocsVersion}" | cut -d '.' -f 1)
   echo "MkDocs major version number:  ${mkdocsMajorVersion}"
   if [ "${mkdocsMajorVersion}" -lt ${requiredMajorVersion} ]; then
     echo ""
@@ -98,8 +92,8 @@ getVersionModifier() {
 
 # Parse the command parameters.
 parseCommandLine() {
-  local d h l opt
-  while getopts :dhl opt; do
+  local d h opt
+  while getopts :dh opt; do
     #echo "Command line option is ${opt}"
     case $opt in
       d) # Indicate that this should be copied to the latest release and version.
@@ -108,9 +102,6 @@ parseCommandLine() {
       h) # Usage.
         printUsage
         exit 0
-        ;;
-      l) # Indicate that this should be copied to the latest release and version.
-        copyToLatest="yes"
         ;;
       \?)
         echo "Invalid option:  -${OPTARG}" >&2
@@ -129,16 +120,48 @@ printUsage() {
   echo ""
   echo "Usage:  $0"
   echo ""
-  echo "Copy the site files to the latest website folder if -l specified:  ${gsFolderLatest}"
   echo "Copy the site files to the versioned website folder:  ${gsFolderVersion}"
+  echo "Copy the site files to the latest website folder:  ${gsFolderLatest}"
+  echo "Prompts are provided to confirm the upload."
   echo ""
   echo "-d dry run (print actions but don't execute upload)"
   echo "-h print usage"
-  echo "-l copy to latest folder in addition to auto-detected version folder"
   echo ""
 }
 
-# Sync the files to GCP.
+# Set the MkDocs executable to use, depending operating system and PATH:
+# - sets the global ${mkdocsExe} variable
+# - return 0 if the executable is found, exit with 1 if not
+setMkDocsExe() {
+  if [ "${operatingSystem}" = "cygwin" -o "${operatingSystem}" = "linux" ]; then
+    # Is usually in the PATH.
+    mkdocsExe="mkdocs"
+    if hash py 2>/dev/null; then
+      echo "mkdocs is not found (not in PATH)."
+      exit 1
+    fi
+  elif [ "${operatingSystem}" = "mingw" ]; then
+    # This is used by Git Bash:
+    # - calling 'hash' is a way to determine if the executable is in the path
+    if hash py 2>/dev/null; then
+      mkdocsExe="py -m mkdocs"
+    else
+      # Try adding the Windows folder to the PATH and rerun:
+      # - not sure why C:\Windows is not in the path in the first place
+      PATH=/C/Windows:${PATH}
+      if hash py 2>/dev/null; then
+        mkdocsExe="py -m mkdocs"
+      else
+        echo 'mkdocs is not found in C:\Windows.'
+        exit 1
+      fi
+    fi
+  fi
+  return 0
+}
+
+# Sync the files to GCP:
+# - if copyToLatest="yes", also ask whether to sync to latest folder
 syncFiles() {
   local exitStat
   exitStat=0
@@ -151,33 +174,44 @@ syncFiles() {
   # - the -r option means recursive to sync the whole folder tree
   # For now always upload to the versioned copy.
   echo ""
-  echo "Copying the documentation to the versioned folder..."
-  gsutil.cmd -m rsync -d -r ${dryrun} ${siteFolder} ${gsFolderVersion}
-  exitStat=$?
-  if [ ${exitStat} -ne 0 ]; then
-    return ${exitStat}
-  fi
-  if [ ${copyToLatest} = "yes" ]; then
-    # Also copy the latest.
-    echo ""
-    echo 'Copying the documentation to the "latest" folder...'
-    gsutil.cmd -m rsync -d -r ${dryrun} ${siteFolder} ${gsFolderLatest}
+  echo "Copying the documentation to the versioned folder:"
+  echo "  from: ${siteFolder}"
+  echo "    to: ${gsFolderVersion}"
+  read -p "Continue with upload (Y/n)? " answer
+  if [ -z "${answer}" -o "${answer}" = "Y" -o "${answer}" = "y" ]; then
+    # Continue with copy to versioned folder.
+    gsutil.cmd -m rsync -d -r ${dryrun} ${siteFolder} ${gsFolderVersion}
     exitStat=$?
-  else
-    if [ ! -z "${statedmiVersionModifier}" ]; then
-      # Updating to latest is only valid when there is not a version modifier.
-      echo ""
-      echo 'Remember to run with -l option if you want to upload to the "latest" folder.'
-      echo ""
+    if [ ${exitStat} -ne 0 ]; then
+      return ${exitStat}
     fi
   fi
-  return ${exitStatus}
+  if [ ${copyToLatest} = "yes" ]; then
+    # Copy to latest will be disabled if a development version.
+    echo ""
+    echo 'Copying the documentation to the "latest" folder:'
+    echo "  from: ${siteFolder}"
+    echo "    to: ${gsFolderLatest}"
+    read -p "Continue with upload (Y/n)? " answer
+    if [ -z "${answer}" -o "${answer}" = "Y" -o "${answer}" = "y" ]; then
+      gsutil.cmd -m rsync -d -r ${dryrun} ${siteFolder} ${gsFolderLatest}
+      exitStat=$?
+      if [ ${exitStat} -ne 0 ]; then
+        return ${exitStat}
+      fi
+    fi
+  fi
+  return ${exitStat}
 }
 
 # Entry point for the script.
 
 # Check the operating system.
 checkOperatingSystem
+
+# Set the MkDocs executable:
+# - will exit if MkDocs is not found
+setMkDocsExe
 
 # Make sure the MkDocs version is OK.
 checkMkdocsVersion
@@ -221,9 +255,10 @@ dryrun=""
 gsFolderLatest="gs://opencdss.state.co.us/statedmi/latest/doc-dev"
 gsFolderVersion="gs://opencdss.state.co.us/statedmi/${statedmiVersion}/doc-dev"
 
-# Whether to copy to latest in addition to the specific version:
-# - default to no because the script can be run on any version, and can't assume latest
-copyToLatest="no"
+# Whether to copy to latest in addition to the specific version
+# - default to yes
+# - will disable if a development version
+copyToLatest="yes"
 
 # Parse the command line.
 parseCommandLine $@

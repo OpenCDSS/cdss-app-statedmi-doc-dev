@@ -27,12 +27,12 @@ although this documentation is intended to help facilitate development by provid
 
 The following software are required for StateDMI development:
 
-1.  [Machine](machine.md) - Windows 7/10 computer or Linux
+1.  [Machine](machine.md) - Windows 10+ computer or Linux
 2.  [Git](git.md) - needed to perform command line version control operations
 3.  [Python and pip](python.md) - needed by MkDocs, and useful general tool (**skip if not editing MkDocs documentation**)
 4.  [MkDocs](mkdocs.md) - MkDocs is used for developer and user documentation static websites, including this documentation (**skip if not editing MkDocs documentation**)
-5.  [Java](java.md) - used to run Eclipse, and can be used to write utility programs
-6.  [Eclipse](eclipse.md) - IDE used for interactive Java software development
+5.  [Java](java/java.md) - used to run Eclipse, and can be used to write utility programs
+6.  [Eclipse](eclipse/eclipse.md) - IDE used for interactive Java software development
 7.  [KDiff3](kdiff3.md) - tool for comparing files (**skip if not comparing files or have equivalent tool**)
 8.  [NSIS](nsis.md) - tool used to create software installer
 9.  [launch4j](launch4j.md) - tool used to create software installer
