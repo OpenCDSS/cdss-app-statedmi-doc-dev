@@ -12,7 +12,7 @@ See also the [StateDMI User Documentation](https://opencdss.state.co.us/statedmi
 *   [About the Open Water Foundation](#about-the-open-water-foundation)
 *   [License](#license)
 *   [Source Repository on GitHub](#source-repository-on-github)
-*   [Release Notes](#release-notes) - **this documentation has been updated for StateDMI 5.2.0**
+*   [Release Notes](#release-notes) - **this documentation has been updated for StateDMI 6.0.0**
 
 ----------------
 
@@ -123,5 +123,5 @@ in order to avoid confusion with the legacy documentation and to facilitate upda
 
 ## Release Notes ##
 
-See the [StateDMI release notes](https://opencdss.state.co.us/statedmi/latest/doc-dev/appendix-release-notes/release-notes)
+See the [StateDMI release notes](https://opencdss.state.co.us/statedmi/latest/doc-user/appendix-release-notes/release-notes)
 section of the StateDMI user documentation for information about StateDMI software changes.

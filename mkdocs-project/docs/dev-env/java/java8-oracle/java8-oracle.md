@@ -36,23 +36,23 @@ The 32-bit version is named `Windows x86` or similar and the download file will 
 Run the installer from the previous step.  Administrator privileges will be required.
 The following procedure may vary slightly as new Java releases are made.
 
-![java8-32-1](images/oracle-java8/java8-32-1.png)
+![java8-32-1](images/java8-32-1.png)
 
 Press ***Next >*** to continue.
 
-![java8-32-2](images/oracle-java8/java8-32-2.png)
+![java8-32-2](images/java8-32-2.png)
 
 Accept the defaults in the above dialog without changing.
 Note that since installing the 32-bit version the installation folder is `C:\Program Files (x86)`.
 Other installations of Java may already exist on the computer, which is OK.
 Press ***Next >*** to continue.
 
-![java8-32-3](images/oracle-java8/java8-32-3.png)
+![java8-32-3](images/java8-32-3.png)
 
 Accept the defaults in the above dialog without changing.
 Press ***Next >*** to continue.  A progress indicator will be shown.
 
-![java8-32-4](images/oracle-java8/java8-32-4.png)
+![java8-32-4](images/java8-32-4.png)
 
 Press ***Close*** to close the above dialog.
 
@@ -60,7 +60,7 @@ Press ***Close*** to close the above dialog.
 
 The Java installation process creates files as shown in the following image.
 
-![java8-32-5](images/oracle-java8/java8-32-5.png)
+![java8-32-5](images/java8-32-5.png)
 
 The use of version-specific folder can be problematic because Eclipse Java Runtime Environment and build utilities must
 be configured to use the specific version.
@@ -75,7 +75,7 @@ mklink /d jdk8 jdk1.8.0_171
 mklink /d jre8 jre1.8.0_171
 ```
 
-![java8-32-6-link](images/oracle-java8/java8-32-6-link.png)
+![java8-32-6-link](images/java8-32-6-link.png)
 
 In addition, the automated build system uses JRE folder that requires another symbolic link to find the JRE to distribute with the installer.
 Create the link as follows in the `C:\Program Files (x86)\Java` folder:
@@ -89,4 +89,4 @@ mklink /d jre_18 jre8
 The order that Java and Eclipse are installed may vary.
 These major development environment components need to be configured appropriately and it is useful to use a run script to start Eclipse.
 
-* [See information about the run script](eclipse.md#check-eclipse-run-scipt)
+*   [See information about the run script](../../eclipse/eclipse.md#check-eclipse-run-scipt)
